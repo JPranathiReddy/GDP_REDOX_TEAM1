@@ -1,0 +1,39 @@
+[gd_scene load_steps=10 format=3 uid="uid://bp0wyspt03gts"]
+
+[ext_resource type="Script" path="res://level_2.gd" id="1_8ise5"]
+[ext_resource type="Texture2D" uid="uid://dt66rt3upufyf" path="res://backgrounds/background2/background 2.jpg" id="2_ckdcs"]
+[ext_resource type="PackedScene" uid="uid://mouvuk22mn85" path="res://hud.tscn" id="2_ij5h2"]
+[ext_resource type="Shader" path="res://level_2.gdshader" id="2_kkmih"]
+[ext_resource type="PackedScene" uid="uid://coom2gtmojaa0" path="res://answer_spawn.tscn" id="3_fn3a2"]
+[ext_resource type="PackedScene" uid="uid://2tvohq7u2ygs" path="res://player.tscn" id="4_kc4jn"]
+[ext_resource type="PackedScene" uid="uid://cge8mgijxca8v" path="res://kill_plane.tscn" id="5_qwgbu"]
+[ext_resource type="AudioStream" uid="uid://w85gdxq5ey5x" path="res://audio/airplane_ambience-6830.mp3" id="8_x05ho"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sg5ag"]
+shader = ExtResource("2_kkmih")
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_8ise5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_sg5ag")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ckdcs")
+
+[node name="Hud" parent="." instance=ExtResource("2_ij5h2")]
+
+[node name="AnswerSpawn" parent="." instance=ExtResource("3_fn3a2")]
+
+[node name="Player" parent="." instance=ExtResource("4_kc4jn")]
+position = Vector2(571, 588)
+
+[node name="KillPlane" parent="." instance=ExtResource("5_qwgbu")]
+position = Vector2(6, -11)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_x05ho")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx0741or7dw3r"]
+
+[ext_resource type="Script" path="res://Audio.gd" id="1_j60ah"]
+[ext_resource type="AudioStream" uid="uid://co1u4mlscoi86" path="res://audio/CorrectSound.mp3" id="2_mlbw0"]
+[ext_resource type="AudioStream" uid="uid://cbb1ne1p1tq66" path="res://audio/IncorrectSound.mp3" id="3_pqar2"]
+[ext_resource type="AudioStream" uid="uid://bvcptufdsv52c" path="res://blaster-2-81267.mp3" id="4_4sm8l"]
+[ext_resource type="AudioStream" uid="uid://bn3t3ayuktbg4" path="res://mouse-click-153941.mp3" id="5_c0qut"]
+[ext_resource type="AudioStream" uid="uid://w85gdxq5ey5x" path="res://audio/airplane_ambience-6830.mp3" id="6_ehv2g"]
+
+[node name="Audio" type="Node2D"]
+script = ExtResource("1_j60ah")
+
+[node name="Correct" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mlbw0")
+
+[node name="Incorrect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pqar2")
+
+[node name="LaserSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4sm8l")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_c0qut")
+
+[node name="Level1Bgm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ehv2g")

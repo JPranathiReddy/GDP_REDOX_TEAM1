@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxfsj8x1di53l"]
+
+[ext_resource type="Script" path="res://level_1.gd" id="1_a3k8v"]
+[ext_resource type="PackedScene" uid="uid://c7eb7hngf2bmm" path="res://background_1.tscn" id="2_dktp2"]
+[ext_resource type="PackedScene" uid="uid://mouvuk22mn85" path="res://hud.tscn" id="3_tpe4e"]
+[ext_resource type="PackedScene" uid="uid://coom2gtmojaa0" path="res://answer_spawn.tscn" id="4_4k4xg"]
+[ext_resource type="PackedScene" uid="uid://cge8mgijxca8v" path="res://kill_plane.tscn" id="5_yx64u"]
+[ext_resource type="PackedScene" uid="uid://2tvohq7u2ygs" path="res://player.tscn" id="6_y5tno"]
+[ext_resource type="AudioStream" uid="uid://w85gdxq5ey5x" path="res://audio/airplane_ambience-6830.mp3" id="7_l646g"]
+[ext_resource type="PackedScene" uid="uid://b8r4212keejxx" path="res://pause_menu.tscn" id="8_cuhul"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_a3k8v")
+
+[node name="Background1" parent="." instance=ExtResource("2_dktp2")]
+
+[node name="Hud" parent="." instance=ExtResource("3_tpe4e")]
+
+[node name="AnswerSpawn" parent="." instance=ExtResource("4_4k4xg")]
+texture_filter = 1
+
+[node name="KillPlane" parent="." instance=ExtResource("5_yx64u")]
+position = Vector2(9, 42)
+
+[node name="Player" parent="." instance=ExtResource("6_y5tno")]
+position = Vector2(564, 658)
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_l646g")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Pause_menu" parent="Camera2D" instance=ExtResource("8_cuhul")]
+offset_left = 544.0
+offset_top = 257.0
+offset_right = 665.0
+offset_bottom = 351.0

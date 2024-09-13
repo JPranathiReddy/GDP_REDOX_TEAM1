@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8r4212keejxx"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_qxbbd"]
+[ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_f4hpy"]
+
+[node name="Pause_menu" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qxbbd")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="resumebtn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_f4hpy")
+theme_override_font_sizes/font_size = 30
+text = "Resume"
+
+[node name="quitbtn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_f4hpy")
+theme_override_font_sizes/font_size = 30
+text = "Quit
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/resumebtn" to="." method="_on_resumebtn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/quitbtn" to="." method="_on_quitbtn_pressed"]

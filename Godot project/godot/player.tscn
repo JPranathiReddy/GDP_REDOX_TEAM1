@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://2tvohq7u2ygs"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_b1c8d"]
+[ext_resource type="PackedScene" uid="uid://c7bbw1f7w8km1" path="res://bullet.tscn" id="2_i6nhc"]
+[ext_resource type="Texture2D" uid="uid://d05bm7a8rddu1" path="res://player/Main Ship - Base - Very damaged.png" id="2_uqtb2"]
+[ext_resource type="Texture2D" uid="uid://bwoxq0xii2vjm" path="res://playerShip1_orange.png" id="3_j5y11"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxqso"]
+atlas = ExtResource("2_uqtb2")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_36ps7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_j5y11")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxqso")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ofh20"]
+radius = 55.0
+height = 110.0
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_b1c8d")
+bullet_scene = ExtResource("2_i6nhc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.25, 1.25)
+scale = Vector2(1.06392, 1.05646)
+sprite_frames = SubResource("SpriteFrames_36ps7")
+animation = &"alive"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_ofh20")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-1.25, -78.75)
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

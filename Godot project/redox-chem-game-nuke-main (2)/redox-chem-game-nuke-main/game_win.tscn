@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0h5w3rpdrtpn"]
+
+[ext_resource type="Script" path="res://game_win.gd" id="1_yrab5"]
+[ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_k2qie"]
+
+[node name="GameWin" type="CanvasLayer"]
+script = ExtResource("1_yrab5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 1168.0
+offset_bottom = 656.0
+color = Color(0.32549, 0.592157, 0.368627, 1)
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 77.0
+offset_top = 16.0
+offset_right = 1082.0
+offset_bottom = 186.0
+theme_override_fonts/font = ExtResource("2_k2qie")
+theme_override_font_sizes/font_size = 49
+text = "You scored enough points and saved the world! Congratulations!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ScoreLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 136.0
+offset_top = 264.0
+offset_right = 1024.0
+offset_bottom = 312.0
+theme_override_fonts/font = ExtResource("2_k2qie")
+theme_override_font_sizes/font_size = 30
+text = "You are well on your way to becomming a redox master!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 514.0
+offset_top = 512.0
+offset_right = 642.0
+offset_bottom = 560.0
+theme_override_fonts/font = ExtResource("2_k2qie")
+theme_override_font_sizes/font_size = 25
+text = "Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

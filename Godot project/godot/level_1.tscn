@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxfsj8x1di53l"]
+[gd_scene load_steps=9 format=3 uid="uid://cxfsj8x1di53l"]
 
 [ext_resource type="PackedScene" uid="uid://c7eb7hngf2bmm" path="res://background_1.tscn" id="2_dktp2"]
 [ext_resource type="PackedScene" uid="uid://mouvuk22mn85" path="res://hud.tscn" id="3_tpe4e"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cge8mgijxca8v" path="res://kill_plane.tscn" id="5_yx64u"]
 [ext_resource type="PackedScene" uid="uid://2tvohq7u2ygs" path="res://player.tscn" id="6_y5tno"]
 [ext_resource type="AudioStream" uid="uid://w85gdxq5ey5x" path="res://audio/airplane_ambience-6830.mp3" id="7_l646g"]
-[ext_resource type="PackedScene" uid="uid://swnuu1p0goxh" path="res://exit_conformation.tscn" id="8_87iqf"]
 [ext_resource type="PackedScene" uid="uid://b8r4212keejxx" path="res://pause_menu.tscn" id="8_cuhul"]
 
 [sub_resource type="GDScript" id="GDScript_wvuyq"]
@@ -17,8 +16,7 @@ script/source = "extends Node2D
 var speed := 200.0  # Declare and initialize the speed variable
 # Define Pause_menu variable
 @onready var pause_menu = $Pause_menu
-@onready var exit_gd = \"res://exit_conformation.gd\"
-@onready var exit_confirm = $Exit_confirmation
+
 var paused = false
 # Define the movement area
 var movement_area := Rect2(Vector2(100, 200), Vector2(1000, 400))
@@ -59,6 +57,7 @@ func pauseMenu():
 		Engine.time_scale=0
 	paused = !paused
 
+	
 
 	
 "
@@ -88,6 +87,3 @@ offset_left = 529.0
 offset_top = 264.0
 offset_right = 650.0
 offset_bottom = 358.0
-
-[node name="Exit_conformation" parent="." instance=ExtResource("8_87iqf")]
-visible = false

@@ -24,5 +24,9 @@ func _on_body_entered(body):
 	else:
 		print("Incorrect answer hit") # Placeholder
 		Audio.incorrect_hit() # Play the incorrect sound
+		GlobalVars.currentHealth -=1
+		if GlobalVars.currentHealth<0:
+			GlobalVars.currentHealth= GlobalVars.maxHealth
+		GlobalVars.healthChanged.emit(GlobalVars.currentHealth)
 	hit_answer.emit()
 	queue_free()

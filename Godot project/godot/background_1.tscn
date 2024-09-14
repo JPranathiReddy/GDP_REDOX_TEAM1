@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7eb7hngf2bmm"]
+[gd_scene load_steps=12 format=3 uid="uid://c7eb7hngf2bmm"]
 
 [ext_resource type="Script" path="res://background_1.gd" id="1_d3b72"]
 [ext_resource type="Texture2D" uid="uid://dw6hmbe8lkurg" path="res://bg.jpeg" id="2_4ujnl"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cv1ry23v2r58h" path="res://backgrounds/background1/parallax-space-stars.png" id="4_ogbfj"]
 [ext_resource type="Texture2D" uid="uid://dn7xyqoup3p3f" path="res://pngwing.com (4).png" id="6_bfe4g"]
 [ext_resource type="Texture2D" uid="uid://c0kjnr0lfmop0" path="res://pngwing.com.png" id="7_1jkv6"]
+[ext_resource type="PackedScene" uid="uid://c2wqxap8flosi" path="res://hearts_container.tscn" id="9_r8g8h"]
 
 [sub_resource type="Shader" id="Shader_g4odx"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.2.2.stable's CanvasItemMaterial.
@@ -92,18 +93,15 @@ position = Vector2(909, 579)
 scale = Vector2(0.0911392, 0.0814815)
 texture = ExtResource("6_bfe4g")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Layer2"]
-position = Vector2(272, 163)
-scale = Vector2(2, 2)
-
 [node name="Sprite2D3" type="Sprite2D" parent="Layer2"]
 position = Vector2(82, 353)
 scale = Vector2(0.0689655, 0.0671875)
 texture = ExtResource("7_1jkv6")
 
-[node name="Layer3" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.9, 0.9)
-motion_mirroring = Vector2(0, 644)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Layer3"]
-position = Vector2(433, 568)
+[node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("9_r8g8h")]
+offset_left = -18.0
+offset_top = 78.0
+offset_right = 484.0
+offset_bottom = 241.0

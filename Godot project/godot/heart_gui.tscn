@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqvssex4wfylh"]
+
+[ext_resource type="Script" path="res://heart_gui.gd" id="1_4wv6u"]
+[ext_resource type="Texture2D" uid="uid://drilah410hlft" path="res://astroid heart-fotor-bg-remover-20240911231041.png" id="2_p8xt5"]
+
+[node name="heartGui" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(67, 109)
+offset_right = 67.0
+offset_bottom = 109.0
+script = ExtResource("1_4wv6u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -1)
+rotation = -0.380482
+scale = Vector2(0.24, 0.241848)
+texture = ExtResource("2_p8xt5")
+centered = false

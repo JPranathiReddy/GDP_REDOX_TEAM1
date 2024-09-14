@@ -1,10 +1,6 @@
-extends Node
+extends Panel
 
-var levelSelected = 0
-var score = 0
-signal healthChanged
-@export var maxHealth: int = 3 
-@onready var currentHealth: int = maxHealth 
+@onready var sprite= $Sprite2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,3 +9,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func update(whole: bool):
+	if whole: sprite.frame = 0
+	else: sprite.hide()

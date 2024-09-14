@@ -47,7 +47,7 @@ func _process(delta):
 	if Input.is_action_just_pressed(\"pause\"):
 		pauseMenu()
 		
-	
+# handling input function for pause
 func pauseMenu():
 	if paused:
 		pause_menu.hide()
@@ -57,7 +57,6 @@ func pauseMenu():
 		Engine.time_scale=0
 	paused = !paused
 
-	
 
 	
 "

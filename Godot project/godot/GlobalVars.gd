@@ -13,3 +13,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func _reset_game():
+	score = 0
+	levelSelected=0
+	currentHealth = maxHealth

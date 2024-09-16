@@ -14,6 +14,7 @@ func _ready():
 	print("level1")
 	$Player.player_hit_answer.connect($AnswerSpawn._on_player_hit_answer)
 	$KillPlane.player_missed_answer.connect($AnswerSpawn._on_player_hit_answer)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

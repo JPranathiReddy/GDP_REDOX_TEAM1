@@ -550,11 +550,11 @@ func _ready():
 func _process(delta):
 	if GlobalVars.score == 100:
 		get_tree().change_scene_to_file("res://game_win.tscn")
-		GlobalVars._reset_game()
+		
 		
 	elif GlobalVars.currentHealth==0:
 		get_tree().change_scene_to_file("res://game_over.tscn")
-		GlobalVars._reset_game()
+		
 		
 	
 func updateLvl1QuestionsAnswers():

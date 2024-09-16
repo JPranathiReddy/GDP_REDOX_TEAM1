@@ -12,4 +12,5 @@ func _process(delta):
 
 
 func _on_main_menu_button_pressed():
+	GlobalVars._reset_game()
 	get_tree().change_scene_to_file("res://menu.tscn")

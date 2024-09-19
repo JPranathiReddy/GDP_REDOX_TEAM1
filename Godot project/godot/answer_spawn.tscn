@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://coom2gtmojaa0"]
+[gd_scene load_steps=11 format=3 uid="uid://coom2gtmojaa0"]
 
 [ext_resource type="Script" path="res://answer_spawn.gd" id="1_vwc8m"]
 [ext_resource type="PackedScene" uid="uid://ccxoogwvxqww5" path="res://incorrect_answers.tscn" id="2_fxttj"]
@@ -12,6 +12,45 @@ point_count = 5
 
 [sub_resource type="SystemFont" id="SystemFont_25uh6"]
 subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luwao"]
+bg_color = Color(0.219501, 0.219501, 0.219501, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.694529, 0.460741, 0.152931, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlelq"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.224884, 0.941901, 0.800417, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn1xw"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.518279, 0.894045, 0.961627, 1)
+border_blend = true
+
+[sub_resource type="Gradient" id="Gradient_2wp04"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_spexe"]
+gradient = SubResource("Gradient_2wp04")
+width = 67
+height = 57
+use_hdr = true
+fill_from = Vector2(0.740741, 0.666667)
+fill_to = Vector2(0, 0)
+metadata/_snap_enabled = true
+metadata/_snap_count = 27
 
 [node name="AnswerSpawn" type="Node2D"]
 script = ExtResource("1_vwc8m")
@@ -49,9 +88,21 @@ offset_left = 443.0
 offset_top = 283.0
 offset_right = 682.0
 offset_bottom = 348.0
+theme_override_colors/font_color = Color(1, 0.774291, 0.427622, 1)
+theme_override_colors/font_pressed_color = Color(0.486728, 1, 0.460714, 1)
+theme_override_colors/font_hover_color = Color(0.972974, 0.79091, 0.976305, 1)
+theme_override_colors/font_focus_color = Color(0.556166, 0.849522, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0.434811, 0.366139, 1)
+theme_override_colors/icon_hover_color = Color(0.44879, 1, 0.997055, 1)
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_8gdoj")
 theme_override_font_sizes/font_size = 40
-text = "Start Level"
+theme_override_styles/normal = SubResource("StyleBoxFlat_luwao")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wlelq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cn1xw")
+text = " Start Level"
+icon = SubResource("GradientTexture2D_spexe")
+text_direction = 2
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

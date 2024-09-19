@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://mouvuk22mn85"]
+[gd_scene load_steps=3 format=3 uid="uid://mouvuk22mn85"]
 
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="1_4hbag"]
 [ext_resource type="Script" path="res://hud.gd" id="1_d5oey"]
 
+<<<<<<< HEAD
 [sub_resource type="Theme" id="Theme_rvpfk"]
 
 [sub_resource type="FontVariation" id="FontVariation_04yqp"]
@@ -28,19 +29,19 @@ border_color = Color(0.972549, 0.00392157, 0.0705882, 1)
 corner_radius_top_left = 20
 corner_radius_bottom_left = 20
 
+=======
+>>>>>>> 1b6513838728ad89333d65ab670ae039685ece18
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_d5oey")
 
 [node name="Score" type="Label" parent="."]
-visible = false
 texture_filter = 1
-offset_left = 259.0
-offset_top = 55.0
-offset_right = 388.0
-offset_bottom = 98.0
+offset_right = 129.0
+offset_bottom = 43.0
 theme_override_fonts/font = ExtResource("1_4hbag")
 theme_override_font_sizes/font_size = 30
 text = "Score: 	"
+<<<<<<< HEAD
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(400, 50)
@@ -57,3 +58,5 @@ theme_override_fonts/font = SubResource("FontVariation_04yqp")
 theme_override_font_sizes/font_size = 29
 theme_override_styles/background = SubResource("StyleBoxFlat_oyux8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_cyr3u")
+=======
+>>>>>>> 1b6513838728ad89333d65ab670ae039685ece18

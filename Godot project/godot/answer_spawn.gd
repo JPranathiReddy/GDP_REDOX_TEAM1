@@ -548,9 +548,9 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#change here for the game win score
 	if GlobalVars.score == 100:
 		get_tree().change_scene_to_file("res://game_win.tscn")
-		
 		
 	elif GlobalVars.currentHealth==0:
 		get_tree().change_scene_to_file("res://game_over.tscn")

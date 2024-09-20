@@ -26,7 +26,7 @@ func _on_body_entered(body):
 		GlobalVars.score += 10
 		
 		# Implementation for progress bar
-		GlobalVars.progress += 5.0
+		GlobalVars.progress += 10.0
 		if GlobalVars.progress > 100:
 			GlobalVars.progress = 100  # Cap the progress at 100%
 	else:

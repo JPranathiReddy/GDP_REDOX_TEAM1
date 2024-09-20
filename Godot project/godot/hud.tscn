@@ -8,7 +8,7 @@
 [sub_resource type="FontVariation" id="FontVariation_04yqp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyux8"]
-bg_color = Color(0.68117, 0.652121, 0.536635, 1)
+bg_color = Color(0.935461, 0.92643, 0.88919, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -43,16 +43,16 @@ theme_override_font_sizes/font_size = 30
 text = "Score: 	"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-custom_minimum_size = Vector2(400, 50)
+custom_minimum_size = Vector2(100, 10)
 offset_left = 6.0
 offset_top = 6.0
-offset_right = 406.0
-offset_bottom = 56.0
+offset_right = 252.0
+offset_bottom = 54.0
 size_flags_stretch_ratio = 20.0
 theme = SubResource("Theme_rvpfk")
-theme_override_colors/font_color = Color(0.0235294, 0.027451, 0.0235294, 1)
-theme_override_colors/font_outline_color = Color(0.186044, 0.505059, 0.402875, 1)
-theme_override_constants/outline_size = 10
+theme_override_colors/font_color = Color(0.933333, 0.203922, 0.184314, 1)
+theme_override_colors/font_outline_color = Color(0.229811, 0.21558, 0, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = SubResource("FontVariation_04yqp")
 theme_override_font_sizes/font_size = 29
 theme_override_styles/background = SubResource("StyleBoxFlat_oyux8")

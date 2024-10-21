@@ -13,6 +13,8 @@ func _process(delta):
 	if GlobalVars.levelSelected==1:
 		velocity = direction * speed
 	elif GlobalVars.levelSelected==2:
-		velocity = direction*speed*5
+		velocity = direction*speed*3
+	elif GlobalVars.levelSelected==3:
+		velocity = direction*speed*0.4
 	# Move the character based on the calculated velocity
 	move_and_slide()

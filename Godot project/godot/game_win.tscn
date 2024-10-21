@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0h5w3rpdrtpn"]
+[gd_scene load_steps=4 format=3 uid="uid://d0h5w3rpdrtpn"]
 
 [ext_resource type="Script" path="res://game_win.gd" id="1_yrab5"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_k2qie"]
+[ext_resource type="AudioStream" uid="uid://bvmvy2481vdsm" path="res://audio/game_win.mp3" id="3_qa2fw"]
 
 [node name="GameWin" type="CanvasLayer"]
 script = ExtResource("1_yrab5")
@@ -21,16 +22,15 @@ offset_right = 1082.0
 offset_bottom = 186.0
 theme_override_fonts/font = ExtResource("2_k2qie")
 theme_override_font_sizes/font_size = 49
-text = "You scored enough points and saved the world! Congratulations!"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="ScoreLabel" type="Label" parent="."]
 texture_filter = 1
-offset_left = 136.0
-offset_top = 264.0
-offset_right = 1024.0
-offset_bottom = 312.0
+offset_left = 141.0
+offset_top = 425.0
+offset_right = 1029.0
+offset_bottom = 473.0
 theme_override_fonts/font = ExtResource("2_k2qie")
 theme_override_font_sizes/font_size = 30
 text = "You are well on your way to becomming a redox master!"
@@ -45,5 +45,17 @@ offset_bottom = 560.0
 theme_override_fonts/font = ExtResource("2_k2qie")
 theme_override_font_sizes/font_size = 25
 text = "Menu"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qa2fw")
+autoplay = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 368.0
+offset_top = 229.0
+offset_right = 773.0
+offset_bottom = 300.0
+theme_override_fonts/font = ExtResource("2_k2qie")
+theme_override_font_sizes/font_size = 49
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,329 @@
+[gd_scene load_steps=16 format=3 uid="uid://cd61tq3rh23ns"]
+
+[ext_resource type="Texture2D" uid="uid://u8t6blfqcqk5" path="res://space.jpg" id="1_nncsy"]
+[ext_resource type="Texture2D" uid="uid://dax4omjt8cb3y" path="res://unlocked.png" id="2_12iqv"]
+[ext_resource type="Texture2D" uid="uid://ben3vpmthdqtp" path="res://lock.png" id="3_7axcw"]
+[ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="3_onvdp"]
+[ext_resource type="Script" path="res://LvlMenu.gd" id="4_ok5de"]
+[ext_resource type="Texture2D" uid="uid://c7s5pnetutemm" path="res://back button.png" id="6_iqeie"]
+[ext_resource type="AudioStream" uid="uid://dq1vmvxsv1xaa" path="res://audio/spacesoundhomepage.mp3" id="6_jb4e2"]
+[ext_resource type="Texture2D" uid="uid://cadu55fl1wwqs" path="res://light-bulb.png" id="7_ynjf0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_coa7m"]
+bg_color = Color(0.282353, 0.847059, 0.270588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4mnc"]
+bg_color = Color(0.32549, 0.882353, 0.305882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3qu"]
+bg_color = Color(0.184314, 0.87451, 0.313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w477s"]
+bg_color = Color(0.25098, 0.917647, 0.184314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcq4n"]
+bg_color = Color(0.25098, 0.917647, 0.184314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cupyi"]
+bg_color = Color(0.25098, 0.917647, 0.184314, 1)
+
+[sub_resource type="GDScript" id="GDScript_so2u4"]
+script/source = "extends Label
+"
+
+[node name="LvlMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("4_ok5de")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nncsy")
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.289
+anchor_right = 0.5
+anchor_bottom = 0.289
+offset_left = -111.0
+offset_top = -28.272
+offset_right = 130.0
+offset_bottom = 38.728
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_onvdp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_coa7m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w4mnc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -20.0
+offset_right = 31.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TextureRect/Button/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_onvdp")
+text = "LEVEL 1 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/Button/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_12iqv")
+expand_mode = 2
+
+[node name="Button2" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.289
+anchor_right = 0.5
+anchor_bottom = 0.289
+offset_left = -111.0
+offset_top = 56.728
+offset_right = 130.0
+offset_bottom = 126.728
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_onvdp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ce3qu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w477s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/Button2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -20.0
+offset_right = 31.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TextureRect/Button2/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_onvdp")
+text = "LEVEL 2"
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/Button2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_7axcw")
+expand_mode = 2
+
+[node name="Button3" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.289
+anchor_right = 0.5
+anchor_bottom = 0.289
+offset_left = -111.0
+offset_top = 151.0
+offset_right = 130.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fcq4n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cupyi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/Button3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.517
+anchor_top = 0.575
+anchor_right = 0.517
+anchor_bottom = 0.575
+offset_left = -57.597
+offset_top = -23.247
+offset_right = 59.403
+offset_bottom = 14.753
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TextureRect/Button3/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_onvdp")
+text = "LEVEL 3"
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/Button3/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_7axcw")
+expand_mode = 2
+
+[node name="Button4" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.289
+anchor_right = 0.5
+anchor_bottom = 0.289
+offset_left = -108.0
+offset_top = 245.728
+offset_right = 133.0
+offset_bottom = 318.728
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fcq4n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cupyi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/Button4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.517
+anchor_top = 0.575
+anchor_right = 0.517
+anchor_bottom = 0.575
+offset_left = -57.597
+offset_top = -23.247
+offset_right = 59.403
+offset_bottom = 14.753
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TextureRect/Button4/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_onvdp")
+text = "LEVEL 4"
+script = SubResource("GDScript_so2u4")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/Button4/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_7axcw")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.785191, 0.459745, 0.300802, 1)
+theme_override_fonts/font = ExtResource("3_onvdp")
+theme_override_font_sizes/font_size = 50
+text = "Redox - Protect the World!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.929
+anchor_top = 0.816
+anchor_right = 0.929
+anchor_bottom = 0.816
+offset_left = -32.208
+offset_top = -31.768
+offset_right = 31.792
+offset_bottom = 32.232
+texture_normal = ExtResource("6_iqeie")
+texture_pressed = ExtResource("6_iqeie")
+texture_hover = ExtResource("6_iqeie")
+
+[node name="TextureButton2" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.841
+anchor_top = 0.812
+anchor_right = 0.841
+anchor_bottom = 0.812
+offset_left = -33.832
+offset_top = -27.176
+offset_right = 30.168
+offset_bottom = 36.824
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("7_ynjf0")
+texture_pressed = ExtResource("7_ynjf0")
+texture_hover = ExtResource("7_ynjf0")
+
+[node name="InstructionsMessage" type="RichTextLabel" parent="TextureRect"]
+visible = false
+modulate = Color(1, 0.847059, 0.141176, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -510.0
+offset_top = -582.0
+offset_right = 549.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("3_onvdp")
+theme_override_font_sizes/normal_font_size = 20
+text = "
+Welcome to \"Redox: Protect The World\" - Your Guide to Success!
+
+Navigate the Adventure - Master the Basics:
+
+Embark on an epic journey where your skills and knowledge will shape the destiny of the world. To navigate this thrilling realm:
+
+Movement: Use left and right arrow keys to maneuver left or right across diverse landscapes.
+Combat: Unleash a flurry of attacks by pressing the spacebar to fend off adversaries.
+Grasp these controls firmly, for they are the cornerstone of your triumph.
+
+Redox - Protect the World:
+
+The game has 4 levels, starting with only Level 1 unlocked.
+
+Unlock next level: Achieve 70% accuracy (7/10 correct answers).
+
+Each level has 3 lives. Lose a life for each incorrect answer.
+
+Gameplay: Shoot the correct option from 4 falling answers to gain points.
+
+Press ESC to open Resume and Quit options.
+
+Good luck!"
+
+[node name="CloseButton" type="Button" parent="TextureRect"]
+visible = false
+layout_mode = 0
+offset_left = 418.0
+offset_top = 586.0
+offset_right = 739.0
+offset_bottom = 631.0
+theme_override_fonts/font = ExtResource("3_onvdp")
+theme_override_font_sizes/font_size = 30
+text = "Close"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_jb4e2")
+autoplay = true
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="TextureRect/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="TextureRect/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="TextureRect/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureRect/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureRect/CloseButton" to="." method="_on_close_button_pressed"]

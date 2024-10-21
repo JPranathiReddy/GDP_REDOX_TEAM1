@@ -22,7 +22,7 @@ var paused = false
 var movement_area := Rect2(Vector2(100, 200), Vector2(1000, 400))
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(\"level1\")
+	print(\"level1 test: \",GlobalVars.userEmail)
 	$Player.player_hit_answer.connect($AnswerSpawn._on_player_hit_answer)
 	$KillPlane.player_missed_answer.connect($AnswerSpawn._on_player_hit_answer)
 
@@ -82,6 +82,7 @@ stream = ExtResource("7_l646g")
 autoplay = true
 
 [node name="Pause_menu" parent="." instance=ExtResource("8_cuhul")]
+visible = false
 offset_left = 529.0
 offset_top = 264.0
 offset_right = 650.0

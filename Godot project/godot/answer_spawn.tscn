@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://coom2gtmojaa0"]
+[gd_scene load_steps=5 format=3 uid="uid://coom2gtmojaa0"]
 
 [ext_resource type="Script" path="res://answer_spawn.gd" id="1_vwc8m"]
 [ext_resource type="PackedScene" uid="uid://ccxoogwvxqww5" path="res://incorrect_answers.tscn" id="2_fxttj"]
@@ -9,48 +9,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 40, -240, 0, 0, 0, 0, 864, -248, 0, 0, 0, 0, 452, -288, 0, 0, 0, 0, 216.227, -260, 0, 0, 0, 0, 40, -240)
 }
 point_count = 5
-
-[sub_resource type="SystemFont" id="SystemFont_25uh6"]
-subpixel_positioning = 0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luwao"]
-bg_color = Color(0.219501, 0.219501, 0.219501, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.694529, 0.460741, 0.152931, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlelq"]
-draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.224884, 0.941901, 0.800417, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn1xw"]
-draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.518279, 0.894045, 0.961627, 1)
-border_blend = true
-
-[sub_resource type="Gradient" id="Gradient_2wp04"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_spexe"]
-gradient = SubResource("Gradient_2wp04")
-width = 67
-height = 57
-use_hdr = true
-fill_from = Vector2(0.740741, 0.666667)
-fill_to = Vector2(0, 0)
-metadata/_snap_enabled = true
-metadata/_snap_count = 27
 
 [node name="AnswerSpawn" type="Node2D"]
 script = ExtResource("1_vwc8m")
@@ -65,44 +23,45 @@ curve = SubResource("Curve2D_t1bcr")
 position = Vector2(40, -240)
 rotation = -0.00970843
 
-[node name="QuestionLabel" type="Label" parent="."]
-offset_left = 721.0
-offset_top = 3.0
-offset_right = 1150.0
-offset_bottom = 104.0
-horizontal_alignment = 2
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
+[node name="QuestionLabel" type="RichTextLabel" parent="."]
+offset_left = 316.0
+offset_right = 1155.0
+offset_bottom = 129.0
+theme_override_fonts/normal_font = ExtResource("3_8gdoj")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
 
-[node name="CompoundLabel" type="Label" parent="."]
-offset_left = 864.0
-offset_top = 99.0
-offset_right = 933.0
-offset_bottom = 134.0
-scale = Vector2(3.86709, 2.1662)
-theme_override_fonts/font = SubResource("SystemFont_25uh6")
-horizontal_alignment = 2
+[node name="CompoundLabel" type="RichTextLabel" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 940.0
+offset_top = 159.0
+offset_right = 1145.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_8gdoj")
+theme_override_font_sizes/normal_font_size = 41
+bbcode_enabled = true
 
 [node name="StartButton" type="Button" parent="."]
 offset_left = 443.0
 offset_top = 283.0
 offset_right = 682.0
 offset_bottom = 348.0
-theme_override_colors/font_color = Color(1, 0.774291, 0.427622, 1)
-theme_override_colors/font_pressed_color = Color(0.486728, 1, 0.460714, 1)
-theme_override_colors/font_hover_color = Color(0.972974, 0.79091, 0.976305, 1)
-theme_override_colors/font_focus_color = Color(0.556166, 0.849522, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 0.434811, 0.366139, 1)
-theme_override_colors/icon_hover_color = Color(0.44879, 1, 0.997055, 1)
-theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_8gdoj")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_luwao")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wlelq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cn1xw")
-text = " Start Level"
-icon = SubResource("GradientTexture2D_spexe")
-text_direction = 2
+text = "Start Level"
 metadata/_edit_use_anchors_ = true
+
+[node name="QuestionNum" type="Label" parent="."]
+offset_left = 943.0
+offset_top = 101.0
+offset_right = 1087.0
+offset_bottom = 170.0
+theme_override_fonts/font = ExtResource("3_8gdoj")
+theme_override_font_sizes/font_size = 25
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

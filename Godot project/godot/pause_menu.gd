@@ -12,4 +12,4 @@ func _on_resumebtn_pressed():
 
 func _on_quitbtn_pressed():
 	
-	get_tree().change_scene_to_file("res://menu.tscn")
+	get_tree().change_scene_to_file("res://LvlMenu.tscn")

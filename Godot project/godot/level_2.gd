@@ -2,13 +2,14 @@ extends Node2D
 
 @onready var bullet_scene = get_node("/root/Lvl1/Player/Bullet")  # Get a reference to the "bullet" scene
 @onready var answer_spawn_scene = get_node("/root/Lvl1/AnswerSpawn")  # Get a reference to the "answer_spawn" scene
-var speed := 200.0  # Declare and initialize the speed variable
+var speed := 100.0  # Declare and initialize the speed variable
 
+var paused=false
+@onready var pause_menu=$Pause_menu
 # Define the movement area
 var movement_area := Rect2(Vector2(100, 200), Vector2(1000, 400))
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("level2")
 	$Player.player_hit_answer.connect($AnswerSpawn._on_player_hit_answer)
 	$KillPlane.player_missed_answer.connect($AnswerSpawn._on_player_hit_answer)
 
@@ -28,3 +29,15 @@ func _process(delta):
 	new_position.y = clamp(new_position.y, movement_area.position.y + sprite_size.y, movement_area.position.y + movement_area.size.y - sprite_size.y)
 	
 	player.position = new_position
+	
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
+	
+func pauseMenu():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale=1
+	else:
+		pause_menu.show()
+		Engine.time_scale=0
+	paused = !paused

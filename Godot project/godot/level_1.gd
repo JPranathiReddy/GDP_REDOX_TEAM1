@@ -11,7 +11,7 @@ var paused = false
 var movement_area := Rect2(Vector2(100, 200), Vector2(1000, 400))
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("level1")
+	print(GlobalVars.userEmail ," is playing level1")
 	$Player.player_hit_answer.connect($AnswerSpawn._on_player_hit_answer)
 	$KillPlane.player_missed_answer.connect($AnswerSpawn._on_player_hit_answer)
 	

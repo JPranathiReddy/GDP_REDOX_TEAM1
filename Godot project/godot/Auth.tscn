@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=3 uid="uid://bljpxegfimoun"]
+
+[ext_resource type="Texture2D" uid="uid://c3c3cm20367bc" path="res://audio/login background.jpg" id="1_e30l4"]
+[ext_resource type="Script" path="res://Auth.gd" id="2_3bj3s"]
+[ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="3_lpgcu"]
+[ext_resource type="AudioStream" uid="uid://w85gdxq5ey5x" path="res://audio/airplane_ambience-6830.mp3" id="3_ohnrb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5l7f"]
+bg_color = Color(0.539562, 0.667126, 0.87937, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qfm1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqsg4"]
+
+[node name="TextureRect" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_e30l4")
+expand_mode = 2
+script = ExtResource("2_3bj3s")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+anchor_left = 0.504
+anchor_top = 0.62
+anchor_right = 0.504
+anchor_bottom = 0.62
+offset_left = -134.608
+offset_top = -24.76
+offset_right = 135.392
+offset_bottom = 25.24
+theme_override_fonts/font = ExtResource("3_lpgcu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s5l7f")
+text = "Login"
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+offset_left = 374.0
+offset_top = 326.0
+offset_right = 778.0
+offset_bottom = 376.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.422
+anchor_right = 0.5
+anchor_bottom = 0.422
+offset_left = -202.0
+offset_top = -55.456
+offset_right = 202.0
+offset_bottom = 55.544
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="email" type="LineEdit" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lpgcu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8qfm1")
+placeholder_text = "Username/Email id :"
+alignment = 1
+
+[node name="password" type="LineEdit" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lpgcu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gqsg4")
+placeholder_text = "Password"
+alignment = 1
+secret = true
+secret_character = "*"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0.593335, 0.883996, 0.50996, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.56
+anchor_top = 0.685
+anchor_right = 0.56
+anchor_bottom = 0.685
+offset_left = -173.12
+offset_top = -12.88
+offset_right = 69.88
+offset_bottom = 31.12
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_lpgcu")
+bbcode_enabled = true
+text = "New User? [u] Register here..[/u]"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ohnrb")
+autoplay = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 0.247059, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.741
+anchor_right = 0.5
+anchor_bottom = 0.741
+offset_left = -103.0
+offset_top = -13.168
+offset_right = 164.0
+offset_bottom = 28.832
+theme_override_fonts/normal_font = ExtResource("3_lpgcu")
+bbcode_enabled = true
+text = "Forgot Password? [u]Click here..[/u]"
+
+[connection signal="pressed" from="Button" to="." method="_on_login_button_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="gui_input" from="RichTextLabel" to="." method="_on_rich_text_label_gui_input"]
+[connection signal="gui_input" from="RichTextLabel2" to="." method="_on_rich_text_label_2_gui_input"]

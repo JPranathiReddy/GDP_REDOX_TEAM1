@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=3 uid="uid://cstan4t6ev2bb"]
+
+[ext_resource type="Script" path="res://background_1.gd" id="1_yijvi"]
+[ext_resource type="Texture2D" uid="uid://c77icecoerluw" path="res://wp3028471-purple-space-wallpapers.jpg" id="2_ouapy"]
+[ext_resource type="Texture2D" uid="uid://bpqennwns51aw" path="res://jelly_planet-removebg-preview.png" id="3_00rf2"]
+[ext_resource type="Texture2D" uid="uid://cv1ry23v2r58h" path="res://backgrounds/background1/parallax-space-stars.png" id="4_5quk0"]
+[ext_resource type="Texture2D" uid="uid://nkwna8ym11qx" path="res://astroid_lev_3-removebg-preview.png" id="5_og85i"]
+[ext_resource type="Texture2D" uid="uid://lsytgwwtuvs6" path="res://red_planet-removebg-preview.png" id="6_k50g2"]
+[ext_resource type="Texture2D" uid="uid://dn7xyqoup3p3f" path="res://pngwing.com (4).png" id="7_cutc2"]
+[ext_resource type="PackedScene" uid="uid://c2wqxap8flosi" path="res://hearts_container.tscn" id="8_8uqkk"]
+
+[sub_resource type="Shader" id="Shader_g4odx"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.2.2.stable's CanvasItemMaterial.
+
+shader_type canvas_item;
+
+
+void fragment() {
+	COLOR = texture(TEXTURE, vec2(UV.x, UV.y - TIME * 0.03));
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_etlcd"]
+shader = SubResource("Shader_g4odx")
+
+[node name="Background2" type="ParallaxBackground"]
+script = ExtResource("1_yijvi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_etlcd")
+position = Vector2(576.526, 326.338)
+rotation = 1.5708
+scale = Vector2(1.03772, 1.10933)
+texture = ExtResource("2_ouapy")
+
+[node name="Layer1" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(0, 644)
+
+[node name="Sprite2D" type="Sprite2D" parent="Layer1"]
+texture_filter = 1
+position = Vector2(1056.12, 300.21)
+rotation = 0.383972
+scale = Vector2(0.193699, 0.177199)
+texture = ExtResource("3_00rf2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Layer1"]
+position = Vector2(104.539, 221.63)
+rotation = 0.466003
+scale = Vector2(0.229271, 0.233035)
+texture = ExtResource("3_00rf2")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Layer1"]
+position = Vector2(972, 176)
+rotation = 1.07687
+texture = ExtResource("4_5quk0")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Layer1"]
+texture_filter = 1
+position = Vector2(791.059, 437.013)
+rotation = 0.765384
+scale = Vector2(0.0824303, 0.0425753)
+skew = 0.00513268
+texture = ExtResource("5_og85i")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Layer1"]
+texture_filter = 1
+position = Vector2(297.727, 531.471)
+rotation = 1.25934
+scale = Vector2(0.139502, 0.0909805)
+skew = -0.194158
+texture = ExtResource("5_og85i")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Layer1"]
+texture_filter = 1
+position = Vector2(59.0203, 592.51)
+rotation = 1.51859
+scale = Vector2(0.16844, 0.0970237)
+skew = 0.109782
+texture = ExtResource("5_og85i")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Layer1"]
+texture_filter = 1
+position = Vector2(842.528, 318.182)
+rotation = 1.78648
+scale = Vector2(0.158332, -0.0899038)
+texture = ExtResource("5_og85i")
+
+[node name="Layer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(0, 644)
+
+[node name="Sprite2D" type="Sprite2D" parent="Layer2"]
+position = Vector2(934.496, 596.5)
+scale = Vector2(0.201752, 0.186691)
+texture = ExtResource("6_k50g2")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Layer2"]
+position = Vector2(368, 340)
+scale = Vector2(0.161272, 0.151241)
+texture = ExtResource("7_cutc2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("8_8uqkk")]
+offset_left = -18.0
+offset_top = 84.0
+offset_right = 484.0
+offset_bottom = 247.0

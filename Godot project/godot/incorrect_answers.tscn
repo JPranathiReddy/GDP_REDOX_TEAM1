@@ -1,21 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccxoogwvxqww5"]
+[gd_scene load_steps=4 format=3 uid="uid://ccxoogwvxqww5"]
 
 [ext_resource type="Script" path="res://incorrect_answers.gd" id="1_xsgax"]
+[ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_j7nw3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yd5e"]
-size = Vector2(109.5, 24.5)
+size = Vector2(160.75, 24.5)
 
 [node name="IncorrectAnswers" type="CharacterBody2D" groups=["incorrect"]]
 position = Vector2(4, 18)
 script = ExtResource("1_xsgax")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 22.0
-offset_top = 6.0
-offset_right = 157.0
-offset_bottom = 34.0
-horizontal_alignment = 1
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(93, 17)
+position = Vector2(118.625, 17)
 shape = SubResource("RectangleShape2D_1yd5e")
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = 30.0
+offset_top = -1.0
+offset_right = 209.0
+offset_bottom = 35.0
+theme_override_fonts/normal_font = ExtResource("2_j7nw3")
+bbcode_enabled = true

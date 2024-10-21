@@ -1,94 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://cxx6n4sr5i0tp"]
+[gd_scene load_steps=6 format=3 uid="uid://cxx6n4sr5i0tp"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_8b5kp"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="1_h5ml1"]
 [ext_resource type="Texture2D" uid="uid://u8t6blfqcqk5" path="res://space.jpg" id="2_5xs5u"]
 [ext_resource type="AudioStream" uid="uid://dq1vmvxsv1xaa" path="res://audio/spacesoundhomepage.mp3" id="5_vcuuu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05l50"]
-draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.911892, 0.992403, 0.851361, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljpw6"]
-draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.553051, 0.998372, 0.486156, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgyv6"]
-draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.935041, 0.824153, 0.973806, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gk4il"]
-draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.417708, 0.882866, 0.882051, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxhwv"]
-bg_color = Color(0.306923, 0.306923, 0.306923, 1)
-draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.980357, 0.973876, 0.726279, 1)
-border_blend = true
-
-[sub_resource type="FontVariation" id="FontVariation_7e6lc"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vat7"]
-draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.997968, 0.975481, 0.98698, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_128v2"]
-draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.969137, 0.969137, 0.969137, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eht1m"]
-draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jigpt"]
-
-[sub_resource type="Shortcut" id="Shortcut_paq0a"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ahh7e"]
 
 [node name="Menu" type="CanvasLayer"]
 script = ExtResource("1_8b5kp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_repeat = 2
-use_parent_material = true
+material = SubResource("ShaderMaterial_ahh7e")
 offset_left = -31.0
 offset_top = 2.0
 offset_right = 1188.0
@@ -102,14 +26,9 @@ anchors_preset = -1
 anchor_top = 0.0123457
 anchor_right = 1.00087
 anchor_bottom = 0.106481
-theme_override_colors/font_color = Color(0.982343, 0.982342, 0.982342, 1)
-theme_override_colors/font_shadow_color = Color(0.423185, 5.65536e-07, 9.62615e-08, 1)
-theme_override_colors/font_outline_color = Color(0.619563, 0.465905, 0.135417, 1)
-theme_override_constants/outline_size = 10
-theme_override_constants/shadow_outline_size = 21
 theme_override_fonts/font = ExtResource("1_h5ml1")
 theme_override_font_sizes/font_size = 50
-text = "Redox - Protect the World"
+text = "Redox: Protect the World"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -120,22 +39,14 @@ anchor_left = 0.501
 anchor_top = 0.597
 anchor_right = 0.501
 anchor_bottom = 0.597
-offset_left = -76.152
-offset_top = -16.856
-offset_right = 84.848
-offset_bottom = 51.144
+offset_left = -75.152
+offset_top = -37.856
+offset_right = 83.848
+offset_bottom = 30.144
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(0.969137, 0.969137, 0.969137, 1)
-theme_override_colors/font_pressed_color = Color(0.622698, 1, 0.597225, 1)
-theme_override_colors/font_hover_color = Color(0.623819, 1, 0.593899, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.560712, 1, 0.52922, 1)
-theme_override_colors/font_outline_color = Color(0.509804, 0.27451, 0, 0.87451)
-theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("1_h5ml1")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_05l50")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ljpw6")
 text = "Start Game"
 
 [node name="InstructionsButton" type="Button" parent="."]
@@ -145,20 +56,14 @@ anchor_left = 0.5
 anchor_top = 0.844
 anchor_right = 0.5
 anchor_bottom = 0.844
-offset_left = -77.0
+offset_left = -81.0
 offset_top = -40.912
-offset_right = 92.0
+offset_right = 86.0
 offset_bottom = 27.088
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(0.986752, 0.986752, 0.986752, 1)
-theme_override_colors/font_hover_color = Color(0.622873, 0.986506, 0.861449, 1)
-theme_override_colors/font_outline_color = Color(0.348379, 0.22776, 0.0445075, 1)
-theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("1_h5ml1")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_bgyv6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_gk4il")
 text = "Instructions"
 
 [node name="InstructionsMessage" type="RichTextLabel" parent="."]
@@ -189,61 +94,38 @@ Embark on your journey with a fusion of science and strategy. Decode the challen
 
 [node name="Selectlevel" type="Label" parent="."]
 offset_left = 430.0
-offset_top = 168.0
-offset_right = 771.0
-offset_bottom = 221.0
-theme_override_colors/font_outline_color = Color(0.458635, 0.237285, 0.0694952, 1)
-theme_override_constants/outline_size = 8
+offset_top = 178.0
+offset_right = 710.0
+offset_bottom = 218.0
 theme_override_fonts/font = ExtResource("1_h5ml1")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_nxhwv")
-text = "-Select The level-"
+text = "Select The level"
 
 [node name="StageOptions" type="OptionButton" parent="Selectlevel"]
-modulate = Color(0.997605, 0.953605, 0.95027, 1)
-self_modulate = Color(1, 0.8834, 0.992169, 1)
+modulate = Color(1, 0.454902, 0.411765, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -144.5
-offset_top = 33.5
-offset_right = 148.5
-offset_bottom = 100.5
+offset_left = -145.5
+offset_top = 26.5
+offset_right = 147.5
+offset_bottom = 93.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.991396, 0.97021, 0.994379, 1)
-theme_override_colors/font_pressed_color = Color(0.479325, 0.692806, 0.231163, 1)
-theme_override_colors/font_hover_color = Color(0.673132, 0.663951, 0.0125402, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.971758, 0.137835, 0.475334, 1)
-theme_override_colors/font_focus_color = Color(0.226344, 0.851011, 0.447874, 1)
-theme_override_colors/font_disabled_color = Color(0.905385, 0.223243, 0.255839, 1)
-theme_override_colors/font_outline_color = Color(0.998681, 0.988217, 0.991112, 1)
-theme_override_constants/h_separation = 20
-theme_override_constants/arrow_margin = 50
-theme_override_constants/outline_size = 8
-theme_override_constants/modulate_arrow = 10
-theme_override_fonts/font = SubResource("FontVariation_7e6lc")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxFlat_6vat7")
-theme_override_styles/hover = SubResource("StyleBoxFlat_128v2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_eht1m")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_jigpt")
 button_pressed = true
-shortcut = SubResource("Shortcut_paq0a")
 alignment = 1
-icon_alignment = 1
 item_count = 4
-popup/item_0/text = "Level - 01"
-popup/item_0/id = 5
-popup/item_1/text = "Level - 02"
-popup/item_1/id = 5
-popup/item_2/text = "Level - 03"
-popup/item_2/id = 5
-popup/item_3/text = "Level - 04"
-popup/item_3/id = 5
+popup/item_0/text = "Level 01"
+popup/item_0/id = 0
+popup/item_1/text = "Level 02"
+popup/item_1/id = 1
+popup/item_2/text = "Level 03"
+popup/item_2/id = 2
+popup/item_3/text = "Level 04"
+popup/item_3/id = 3
 
 [node name="CloseButton" type="Button" parent="."]
 visible = false

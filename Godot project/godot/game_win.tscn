@@ -1,13 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0h5w3rpdrtpn"]
+[gd_scene load_steps=10 format=3 uid="uid://d0h5w3rpdrtpn"]
 
 [ext_resource type="Script" path="res://game_win.gd" id="1_yrab5"]
+[ext_resource type="Texture2D" uid="uid://c1himu1u121vj" path="res://winimage.jpg" id="2_0vjgf"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_k2qie"]
 [ext_resource type="AudioStream" uid="uid://bvmvy2481vdsm" path="res://audio/game_win.mp3" id="3_qa2fw"]
+[ext_resource type="PackedScene" uid="uid://bujjbhbafyrsi" path="res://white.tscn" id="4_40bnb"]
+[ext_resource type="Texture2D" uid="uid://8hkipkb5jbj2" path="res://shooter.png" id="5_paapk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8b71"]
+bg_color = Color(0.449626, 0.544402, 0.319247, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.921569, 0.572549, 0.309804, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35y2u"]
+bg_color = Color(0.972549, 0.67451, 0.223529, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.605698, 0.903056, 0.217578, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksik3"]
+border_color = Color(0.988235, 0.847059, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="GameWin" type="CanvasLayer"]
 script = ExtResource("1_yrab5")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(832, 323.5)
+scale = Vector2(0.883647, 0.60463)
+texture = ExtResource("2_0vjgf")
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -16.0
 offset_top = -16.0
 offset_right = 1168.0
@@ -27,10 +69,10 @@ autowrap_mode = 3
 
 [node name="ScoreLabel" type="Label" parent="."]
 texture_filter = 1
-offset_left = 141.0
-offset_top = 425.0
-offset_right = 1029.0
-offset_bottom = 473.0
+offset_left = 153.0
+offset_top = 88.0
+offset_right = 1041.0
+offset_bottom = 136.0
 theme_override_fonts/font = ExtResource("2_k2qie")
 theme_override_font_sizes/font_size = 30
 text = "You are well on your way to becomming a redox master!"
@@ -38,12 +80,18 @@ horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 texture_filter = 1
-offset_left = 514.0
-offset_top = 512.0
-offset_right = 642.0
-offset_bottom = 560.0
+offset_left = 511.0
+offset_top = 573.0
+offset_right = 639.0
+offset_bottom = 621.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0823529, 0.933333, 0.0745098, 1)
+theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("2_k2qie")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_u8b71")
+theme_override_styles/hover = SubResource("StyleBoxFlat_35y2u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ksik3")
 text = "Menu"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -51,11 +99,30 @@ stream = ExtResource("3_qa2fw")
 autoplay = true
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 368.0
-offset_top = 229.0
-offset_right = 773.0
-offset_bottom = 300.0
+offset_left = 361.0
+offset_top = 140.0
+offset_right = 777.0
+offset_bottom = 240.0
 theme_override_fonts/font = ExtResource("2_k2qie")
-theme_override_font_sizes/font_size = 49
+theme_override_font_sizes/font_size = 51
+
+[node name="White" parent="." instance=ExtResource("4_40bnb")]
+amount = 60
+color = Color(0.885517, 0.954896, 0.96113, 1)
+
+[node name="Red" parent="." instance=ExtResource("4_40bnb")]
+position = Vector2(578, 475)
+amount = 60
+color = Color(0.815686, 0.121569, 0.164706, 1)
+
+[node name="Orange" parent="." instance=ExtResource("4_40bnb")]
+position = Vector2(578, 472)
+amount = 60
+color = Color(0.988235, 0.666667, 0.192157, 1)
+
+[node name="Shooter" type="Sprite2D" parent="."]
+position = Vector2(578, 524)
+scale = Vector2(0.857143, 0.8)
+texture = ExtResource("5_paapk")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

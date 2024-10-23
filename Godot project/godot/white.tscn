@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bujjbhbafyrsi"]
+
+[node name="White" type="CPUParticles2D"]
+position = Vector2(578, 489)
+amount = 40
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 65.04
+initial_velocity_max = 597.97
+angular_velocity_min = 280.97
+angular_velocity_max = 280.97
+linear_accel_min = 11.38
+linear_accel_max = 11.38
+scale_amount_max = 10.0

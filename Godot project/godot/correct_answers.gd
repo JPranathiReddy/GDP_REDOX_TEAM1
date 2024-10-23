@@ -26,6 +26,7 @@ func _process(delta):
 	elif GlobalVars.levelSelected==3:
 		velocity = direction*speed*0.4
 	elif GlobalVars.levelSelected==4:
+		velocity = direction1*speed*2
 		if position.x > 200:
 			time_passed += delta
 			var new_x = position.x + sin(time_passed * x_speed) * x_amplitude

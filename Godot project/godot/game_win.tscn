@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://d0h5w3rpdrtpn"]
 
 [ext_resource type="Script" path="res://game_win.gd" id="1_yrab5"]
-[ext_resource type="Texture2D" uid="uid://c1himu1u121vj" path="res://winimage.jpg" id="2_0vjgf"]
+[ext_resource type="Texture2D" uid="uid://dygrg2s87lmk0" path="res://winimage.jpg" id="2_0vjgf"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_k2qie"]
 [ext_resource type="AudioStream" uid="uid://bvmvy2481vdsm" path="res://audio/game_win.mp3" id="3_qa2fw"]
 [ext_resource type="PackedScene" uid="uid://bujjbhbafyrsi" path="res://white.tscn" id="4_40bnb"]
-[ext_resource type="Texture2D" uid="uid://8hkipkb5jbj2" path="res://shooter.png" id="5_paapk"]
+[ext_resource type="Texture2D" uid="uid://baekikk58vk2j" path="res://shooter.png" id="5_paapk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8b71"]
 bg_color = Color(0.449626, 0.544402, 0.319247, 1)

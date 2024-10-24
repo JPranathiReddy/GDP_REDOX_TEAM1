@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed := 25
-var direction := Vector2.DOWN
+var direction1 := Vector2.DOWN
 var direction2 := Vector2.UP
 var x_speed = 2 # Speed in x direction
 var y_speed = 2  # Speed in y direction
@@ -20,11 +20,11 @@ func _ready():
 func _process(delta):
 	# Apply the movement velocity
 	if GlobalVars.levelSelected==1:
-		velocity = direction * speed
+		velocity = direction1 * speed
 	elif GlobalVars.levelSelected==2:
-		velocity = direction*speed*3
+		velocity = direction1*speed*3
 	elif GlobalVars.levelSelected==3:
-		velocity = direction*speed*0.4
+		velocity = direction1*speed*0.4
 	elif GlobalVars.levelSelected==4:
 		velocity = direction1*speed*2
 		if position.x > 200:

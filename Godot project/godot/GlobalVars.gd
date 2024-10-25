@@ -26,7 +26,7 @@ func _process(delta):
 #reset fuctuon ro reset game
 func _reset_game():
 	score = 0
-	levelSelected=0
+	#levelSelected=0
 	progress=0
 	currentHealth = maxHealth
 

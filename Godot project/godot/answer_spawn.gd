@@ -608,7 +608,9 @@ func update_score_in_db(level: String, new_score: int,callback: Callable):
 		http_request_score.connect("request_completed", callback)
 
 func _on_score_update_complete(result, response_code, headers, body):
-	if GlobalVars.score >= 70:
+	if GlobalVars.levelSelected == 2 and GlobalVars.score < 70:
+		get_tree().change_scene_to_file("res://game_over2.tscn")  # Change to game_over2.tscn if Level 2 is lost
+	elif GlobalVars.score >= 70:
 		get_tree().change_scene_to_file("res://game_win.tscn")
 	else:
 		get_tree().change_scene_to_file("res://game_over.tscn")
@@ -635,7 +637,11 @@ func updateLvl1QuestionsAnswers():
 				GlobalVars.level1score = GlobalVars.score
 				update_score_in_db("level3score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
 		await get_tree().create_timer(2.0).timeout
-		get_tree().change_scene_to_file("res://game_win.tscn")
+		if GlobalVars.levelSelected == 2:
+			get_tree().change_scene_to_file("res://game_win2.tscn")  # Load game_win2.tscn if Level 2 is completed
+		else:
+			get_tree().change_scene_to_file("res://game_win.tscn")  # Load default win scene for other levels
+		return
 		return;
 	# Fetch the current question and answers
 	var current_question = questionSet[count] 

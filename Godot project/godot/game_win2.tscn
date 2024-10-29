@@ -1,0 +1,166 @@
+[gd_scene load_steps=13 format=3 uid="uid://btxrbwvd6i5r5"]
+
+[ext_resource type="Script" path="res://game_win2.gd" id="1_hotor"]
+[ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_k2qie"]
+[ext_resource type="Texture2D" uid="uid://xfwdhbvfrlvq" path="res://WinScreen2.png" id="2_qfkls"]
+[ext_resource type="AudioStream" uid="uid://c41ggaabcy6vu" path="res://diwali_crackers.mp3" id="4_5f2cp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8b71"]
+bg_color = Color(0.449626, 0.544402, 0.319247, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.921569, 0.572549, 0.309804, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35y2u"]
+bg_color = Color(0.972549, 0.67451, 0.223529, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.605698, 0.903056, 0.217578, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksik3"]
+border_color = Color(0.988235, 0.847059, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Gradient" id="Gradient_0mpja"]
+offsets = PackedFloat32Array(0, 0.996997)
+colors = PackedColorArray(0.847059, 0.796078, 0.00784314, 1, 1, 0.0941176, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bpgp6"]
+gradient = SubResource("Gradient_0mpja")
+
+[sub_resource type="Curve" id="Curve_ciuwq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.370291), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_msk3d"]
+curve = SubResource("Curve_ciuwq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5xy6y"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 49, 0)
+scale_min = 5.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_msk3d")
+color_ramp = SubResource("GradientTexture1D_bpgp6")
+
+[node name="GameWin" type="CanvasLayer"]
+script = ExtResource("1_hotor")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(568.5, 330.5)
+scale = Vector2(1.33444, 1.15833)
+texture = ExtResource("2_qfkls")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_5f2cp")
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 77.0
+offset_top = 197.0
+offset_right = 1082.0
+offset_bottom = 367.0
+theme_override_fonts/font = ExtResource("2_k2qie")
+theme_override_font_sizes/font_size = 49
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ScoreLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 153.0
+offset_top = 276.0
+offset_right = 1041.0
+offset_bottom = 324.0
+theme_override_fonts/font = ExtResource("2_k2qie")
+theme_override_font_sizes/font_size = 30
+text = "You are well on your way to becomming a redox master!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 507.0
+offset_top = 441.0
+offset_right = 635.0
+offset_bottom = 489.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0823529, 0.933333, 0.0745098, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_k2qie")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_u8b71")
+theme_override_styles/hover = SubResource("StyleBoxFlat_35y2u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ksik3")
+text = "Menu"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 363.0
+offset_top = 321.0
+offset_right = 779.0
+offset_bottom = 421.0
+theme_override_fonts/font = ExtResource("2_k2qie")
+theme_override_font_sizes/font_size = 51
+
+[node name="Explosion1" type="GPUParticles2D" parent="."]
+position = Vector2(262, 151)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_5xy6y")
+explosiveness = 0.75
+
+[node name="Explosion2" type="GPUParticles2D" parent="."]
+position = Vector2(74, 49)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_5xy6y")
+explosiveness = 0.75
+
+[node name="Explosion3" type="GPUParticles2D" parent="."]
+position = Vector2(1042, 63)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_5xy6y")
+explosiveness = 0.75
+
+[node name="Explosion4" type="GPUParticles2D" parent="."]
+position = Vector2(832, 179)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_5xy6y")
+explosiveness = 0.75
+
+[node name="Explosion5" type="GPUParticles2D" parent="."]
+position = Vector2(459, 252)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_5xy6y")
+explosiveness = 0.75
+
+[node name="Explosion6" type="GPUParticles2D" parent="."]
+position = Vector2(561, 70)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_5xy6y")
+explosiveness = 0.75
+
+[node name="Explosion7" type="GPUParticles2D" parent="."]
+position = Vector2(841, 385)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_5xy6y")
+explosiveness = 0.75
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

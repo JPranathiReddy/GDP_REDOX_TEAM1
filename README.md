@@ -34,4 +34,4 @@ Question Management: The game is supported by a web-based frontend built using N
 User Management: The game also incorporates Firebase for user authentication, providing a secure login and registration system. This allows users to create accounts, track their progress across sessions, and ensures that each player's achievements are saved. 
 
 
-GitLink: muthyalasairam/RedoxUI for Backend.
+GitLink: [U}https://github.com/muthyalasairam/RedoxUI[\U] for Backend.

@@ -1,9 +1,7 @@
 extends Node2D
-  # This will hold the data fetched from the server
+# This will hold the data fetched from the server
 
 @export var Answers: PackedScene
-
-
 
 var http_request: HTTPRequest
 var http_request_score:HTTPRequest
@@ -136,10 +134,6 @@ func updateLvl1QuestionsAnswers():
 		incorrectAnswer1 = incorrect_answers_scene.instantiate()
 		incorrectAnswer2 = incorrect_answers_scene.instantiate()
 		incorrectAnswer3 = incorrect_answers_scene.instantiate()
-
-	
-
-
 	# Update the answer labels with the correct and incorrect answers
 	correctAnswer.get_node("Label").text = current_question["correctOption"]
 	incorrectAnswer1.get_node("Label").text = current_question["incorrectOption1"]
@@ -175,7 +169,6 @@ func updateLvl1QuestionsAnswers():
 
 	# Shuffle the positions to randomize the answer placements
 	positions.shuffle()
-
 	# Assign positions randomly to the answers
 	correctAnswer.position = positions[0]
 	incorrectAnswer1.position = positions[1]
@@ -186,8 +179,6 @@ func updateLvl1QuestionsAnswers():
 	for child in children:
 		get_parent().add_child(child) 
 		await get_tree().create_timer(0.5).timeout  # Wait for 1 second between spawns
-
-
 func _on_start_button_pressed():
 	print(GlobalVars.userEmail,"is playing")
 	Audio.button_hit()

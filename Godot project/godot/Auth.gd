@@ -143,6 +143,3 @@ func send_password_reset_request(email: String):
 		print("HTTP Request error: ", error)
 	else:
 		print("Password reset request sent.")
-
-
-

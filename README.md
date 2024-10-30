@@ -32,3 +32,6 @@ For each correct hit, the progress bar increases by 10%, indicating the player's
 Question Management: The game is supported by a web-based frontend built using Node.js and MySQL, allowing administrators to add, edit, and manage the set of questions for each level. This ensures flexibility in updating content and tailoring the game to different learning topics. 
 
 User Management: The game also incorporates Firebase for user authentication, providing a secure login and registration system. This allows users to create accounts, track their progress across sessions, and ensures that each player's achievements are saved. 
+
+
+GitLink: muthyalasairam/RedoxUI for Backend.

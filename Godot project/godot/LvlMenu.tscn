@@ -234,14 +234,14 @@ vertical_alignment = 1
 [node name="TextureButton" type="TextureButton" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.929
-anchor_top = 0.816
-anchor_right = 0.929
-anchor_bottom = 0.816
-offset_left = -32.208
-offset_top = -31.768
-offset_right = 31.792
-offset_bottom = 32.232
+anchor_left = 0.917
+anchor_top = 0.792
+anchor_right = 0.917
+anchor_bottom = 0.792
+offset_left = -32.384
+offset_top = -32.2161
+offset_right = 31.616
+offset_bottom = 31.7839
 texture_normal = ExtResource("6_iqeie")
 texture_pressed = ExtResource("6_iqeie")
 texture_hover = ExtResource("6_iqeie")
@@ -249,14 +249,14 @@ texture_hover = ExtResource("6_iqeie")
 [node name="TextureButton2" type="TextureButton" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.841
-anchor_top = 0.812
-anchor_right = 0.841
-anchor_bottom = 0.812
-offset_left = -33.832
-offset_top = -27.176
-offset_right = 30.168
-offset_bottom = 36.824
+anchor_left = 0.806
+anchor_top = 0.789
+anchor_right = 0.806
+anchor_bottom = 0.789
+offset_left = -32.5121
+offset_top = -36.272
+offset_right = 31.4879
+offset_bottom = 35.728
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("7_ynjf0")
@@ -315,6 +315,30 @@ offset_bottom = 631.0
 theme_override_fonts/font = ExtResource("3_onvdp")
 theme_override_font_sizes/font_size = 30
 text = "Close"
+
+[node name="InstructionLabel" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 546.0
+offset_right = 997.0
+offset_bottom = 588.0
+theme_override_fonts/font = ExtResource("3_onvdp")
+theme_override_font_sizes/font_size = 20
+text = "Instructions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="backLabel" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1035.0
+offset_top = 552.0
+offset_right = 1091.0
+offset_bottom = 577.0
+theme_override_fonts/font = ExtResource("3_onvdp")
+theme_override_font_sizes/font_size = 20
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_jb4e2")

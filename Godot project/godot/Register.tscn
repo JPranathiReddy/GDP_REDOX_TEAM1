@@ -107,5 +107,16 @@ texture_normal = ExtResource("5_7fa50")
 texture_pressed = ExtResource("5_7fa50")
 texture_hover = ExtResource("5_7fa50")
 
+[node name="BackLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 95.0
+offset_right = 157.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("3_b3hoe")
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Button" to="." method="_on_signup_button_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -93,6 +93,8 @@ func _on_texture_button_2_pressed():
 	$TextureRect/Button4.hide()
 	$TextureRect/TextureButton.hide()
 	$TextureRect/TextureButton2.hide()
+	$TextureRect/InstructionLabel.text = ""
+	$TextureRect/backLabel.text = ""
 
 
 func _on_close_button_pressed():
@@ -105,4 +107,6 @@ func _on_close_button_pressed():
 	$TextureRect/TextureButton2.show()
 	$TextureRect/InstructionsMessage.hide()
 	$TextureRect/CloseButton.hide()
+	$TextureRect/InstructionLabel.text = "Instructions"
+	$TextureRect/backLabel.text = "Back"
 	

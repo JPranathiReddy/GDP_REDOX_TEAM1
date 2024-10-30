@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://game_win2.gd" id="1_hotor"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_k2qie"]
-[ext_resource type="Texture2D" uid="uid://xfwdhbvfrlvq" path="res://WinScreen2.png" id="2_qfkls"]
-[ext_resource type="AudioStream" uid="uid://c41ggaabcy6vu" path="res://diwali_crackers.mp3" id="4_5f2cp"]
+[ext_resource type="Texture2D" uid="uid://br65x2ognd7l6" path="res://WinScreen2.png" id="2_qfkls"]
+[ext_resource type="AudioStream" uid="uid://4mg310ktfdjp" path="res://diwali_crackers.mp3" id="4_5f2cp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8b71"]
 bg_color = Color(0.449626, 0.544402, 0.319247, 1)

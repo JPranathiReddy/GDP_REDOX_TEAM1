@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://game_over2.gd" id="1_cmhje"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_2jck2"]
-[ext_resource type="Texture2D" uid="uid://c7ubingyyymda" path="res://gameover2backdrop.png" id="2_cgs8p"]
-[ext_resource type="AudioStream" uid="uid://ctjnlyd17ehfj" path="res://gameover2bgm.mp3" id="4_f0yf6"]
+[ext_resource type="Texture2D" uid="uid://vgrc55sl37pq" path="res://Gameover2background.png" id="2_kvpkd"]
+[ext_resource type="AudioStream" uid="uid://conw7uuvl5g02" path="res://gameover2bgm.mp3" id="4_f0yf6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgdf1"]
 bg_color = Color(0.154995, 0.200393, 0.170576, 1)
@@ -62,9 +62,9 @@ color_ramp = SubResource("GradientTexture1D_ikvyp")
 script = ExtResource("1_cmhje")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(422, 327)
-scale = Vector2(2.76548, 1.93192)
-texture = ExtResource("2_cgs8p")
+position = Vector2(570, 32.0275)
+scale = Vector2(1.87656, 3.53745)
+texture = ExtResource("2_kvpkd")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
@@ -112,8 +112,8 @@ text = "Menu"
 [node name="ScoreLabel" type="Label" parent="."]
 offset_left = 444.0
 offset_top = 278.0
-offset_right = 692.0
-offset_bottom = 326.0
+offset_right = 700.0
+offset_bottom = 346.0
 theme_override_fonts/font = ExtResource("2_2jck2")
 theme_override_font_sizes/font_size = 25
 text = "Score:"
@@ -124,8 +124,8 @@ stream = ExtResource("4_f0yf6")
 autoplay = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(604, 16)
-amount = 100
+position = Vector2(598, 5)
+amount = 1000
 process_material = SubResource("ParticleProcessMaterial_q48oc")
 lifetime = 20.0
 speed_scale = 2.0

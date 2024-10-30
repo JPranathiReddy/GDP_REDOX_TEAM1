@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://background_1.gd" id="1_vcdnr"]
 [ext_resource type="Texture2D" uid="uid://dw6hmbe8lkurg" path="res://bg.jpeg" id="2_d1vuh"]
 [ext_resource type="Texture2D" uid="uid://df5gxv23aher6" path="res://austronaut-removebg-preview.png" id="4_u5rsy"]
-[ext_resource type="Texture2D" uid="uid://cv1ry23v2r58h" path="res://backgrounds/background1/parallax-space-stars.png" id="6_cc7x4"]
+[ext_resource type="Texture2D" uid="uid://cv1ry23v2r58h" path="res://parallax-space-stars.png" id="6_cc7x4"]
 [ext_resource type="Texture2D" uid="uid://cmqyeyk0n68m0" path="res://astroid_lev_2-removebg-preview.png" id="6_pqtrw"]
 [ext_resource type="Texture2D" uid="uid://ca4nqn04qqd6s" path="res://stone_palnet-removebg-preview.png" id="7_5rr17"]
 [ext_resource type="Texture2D" uid="uid://phigu5nlha61" path="res://purple_planet-removebg-preview.png" id="8_0yh3y"]

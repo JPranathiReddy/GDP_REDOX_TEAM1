@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7eb7hngf2bmm"]
+[gd_scene load_steps=11 format=3 uid="uid://c7eb7hngf2bmm"]
 
 [ext_resource type="Script" path="res://background_1.gd" id="1_d3b72"]
 [ext_resource type="Texture2D" uid="uid://fy746ynbwcfj" path="res://bgredox.jpg" id="2_a2j6d"]
 [ext_resource type="Texture2D" uid="uid://dqvbjt7o5pr2f" path="res://pngwing.com (1).png" id="3_15ihc"]
 [ext_resource type="Texture2D" uid="uid://cndrnn52fiwpj" path="res://pngwing.com (2).png" id="4_1fqqd"]
 [ext_resource type="Texture2D" uid="uid://cmtisp5bxubw7" path="res://meteorGrey_big2.png" id="4_7ipur"]
-[ext_resource type="Texture2D" uid="uid://cv1ry23v2r58h" path="res://backgrounds/background1/parallax-space-stars.png" id="4_ogbfj"]
 [ext_resource type="Texture2D" uid="uid://dn7xyqoup3p3f" path="res://pngwing.com (4).png" id="6_bfe4g"]
 [ext_resource type="Texture2D" uid="uid://c0kjnr0lfmop0" path="res://pngwing.com.png" id="7_1jkv6"]
 [ext_resource type="PackedScene" uid="uid://c2wqxap8flosi" path="res://hearts_container.tscn" id="9_r8g8h"]
@@ -81,7 +80,6 @@ texture = ExtResource("4_1fqqd")
 [node name="Sprite2D3" type="Sprite2D" parent="Layer1"]
 position = Vector2(972, 176)
 rotation = 1.07687
-texture = ExtResource("4_ogbfj")
 
 [node name="Layer2" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.6, 0.6)

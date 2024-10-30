@@ -29,10 +29,8 @@ func _process(delta):
 			time_passed += delta
 			var new_x = position.x + sin(time_passed * x_speed) * x_amplitude
 			var new_y = position.y + cos(time_passed * y_speed) * y_amplitude
-			
 			new_x = clamp(new_x, 0, screen_size.x)
 			new_y = clamp(new_y, 0,screen_size.y )
-			
 			position= Vector2(new_x,max_y)
 	# Move the character based on the calculated velocity
 	move_and_slide()

@@ -2,21 +2,8 @@
 
 [ext_resource type="Script" path="res://game_over2.gd" id="1_cmhje"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_2jck2"]
-[ext_resource type="Texture2D" uid="uid://vgrc55sl37pq" path="res://Gameover2background.png" id="2_kvpkd"]
+[ext_resource type="Texture2D" uid="uid://cvir2io78k2ss" path="res://gameover2backdrop.png" id="2_cgs8p"]
 [ext_resource type="AudioStream" uid="uid://conw7uuvl5g02" path="res://gameover2bgm.mp3" id="4_f0yf6"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgdf1"]
-bg_color = Color(0.154995, 0.200393, 0.170576, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.830368, 0.790662, 0.779643, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66c0y"]
 bg_color = Color(0.34264, 0.653102, 0.718333, 1)
@@ -37,6 +24,19 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.958644, 0.77415, 0.31068, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgdf1"]
+bg_color = Color(0.154995, 0.200393, 0.170576, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.830368, 0.790662, 0.779643, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_bottom = 2.0
 
 [sub_resource type="Gradient" id="Gradient_iwhbc"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -62,9 +62,9 @@ color_ramp = SubResource("GradientTexture1D_ikvyp")
 script = ExtResource("1_cmhje")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(570, 32.0275)
-scale = Vector2(1.87656, 3.53745)
-texture = ExtResource("2_kvpkd")
+position = Vector2(422, 327)
+scale = Vector2(2.76548, 1.93192)
+texture = ExtResource("2_cgs8p")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
@@ -73,14 +73,14 @@ anchor_left = 0.0368924
 anchor_top = 0.0478395
 anchor_right = 0.963108
 anchor_bottom = 0.29321
-offset_left = -5.50005
-offset_top = 86.0
-offset_right = -5.5
-offset_bottom = 86.0
+offset_left = -3.50005
+offset_top = 19.0
+offset_right = -3.5
+offset_bottom = 84.9999
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_2jck2")
 theme_override_font_sizes/font_size = 60
-text = "Game Over: You Have Been Defeated!"
+text = "Game Over: You Have Been Defeated! Play again to unlock next level"
 horizontal_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
@@ -99,21 +99,21 @@ offset_bottom = 246.733
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.00481, 0.985223)
-theme_override_colors/font_color = Color(0, 0.658824, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.937255, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.596078, 0.454902, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0.658824, 0, 1)
 theme_override_fonts/font = ExtResource("2_2jck2")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_qgdf1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_66c0y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l4t47")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgdf1")
 text = "Menu"
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_left = 444.0
-offset_top = 278.0
-offset_right = 700.0
-offset_bottom = 346.0
+offset_left = 468.0
+offset_top = 331.0
+offset_right = 716.0
+offset_bottom = 379.0
 theme_override_fonts/font = ExtResource("2_2jck2")
 theme_override_font_sizes/font_size = 25
 text = "Score:"
@@ -124,8 +124,8 @@ stream = ExtResource("4_f0yf6")
 autoplay = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(598, 5)
-amount = 1000
+position = Vector2(604, 16)
+amount = 100
 process_material = SubResource("ParticleProcessMaterial_q48oc")
 lifetime = 20.0
 speed_scale = 2.0

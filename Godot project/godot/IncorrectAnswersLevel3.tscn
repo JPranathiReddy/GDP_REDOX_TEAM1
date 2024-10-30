@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://tn14ga8a57uc"]
+
+[ext_resource type="Script" path="res://IncorrectAnswersLevel3.gd" id="1_878qe"]
+[ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_shm00"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbv0j"]
+size = Vector2(80, 34)
+
+[node name="InorrectAnswersLevel3" type="CharacterBody2D" groups=["incorrect"]]
+script = ExtResource("1_878qe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(115, 17)
+shape = SubResource("RectangleShape2D_hbv0j")
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = 76.0
+offset_top = -4.0
+offset_right = 189.0
+offset_bottom = 46.0
+size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("2_shm00")
+theme_override_font_sizes/normal_font_size = 19
+bbcode_enabled = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cphecnxq6yd0n"
+path="res://.godot/imported/Game lose Background.mp3-5e113a3708fca6c170353b8d9a72dbec.mp3str"
+
+[deps]
+
+source_file="res://Game lose Background.mp3"
+dest_files=["res://.godot/imported/Game lose Background.mp3-5e113a3708fca6c170353b8d9a72dbec.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

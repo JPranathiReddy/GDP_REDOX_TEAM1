@@ -546,6 +546,8 @@ var questionSet
 var count = 0
 var correct_answers_scene = preload("res://correct_answers.tscn")
 var incorrect_answers_scene = preload("res://incorrect_answers.tscn")
+var correct_answers_sceneLevel3 = preload("res://CorrectAnswersLevel3.tscn")
+var incorrect_answers_sceneLevel3 = preload("res://IncorrectAnswersLevel3.tscn")
 var last_spawned_question = null
 
 # Called when the node enters the scene tree for the first time.
@@ -588,6 +590,7 @@ func _on_request_completed(result, response_code, headers, body):
 	else:
 		print("Failed to fetch data. Status Code: ", response_code)
 func process_fetched_questions():
+	questions_data.shuffle()
 	questionSet = questions_data
 	updateLvl1QuestionsAnswers()
 func update_score_in_db(level: String, new_score: int,callback: Callable):
@@ -608,9 +611,7 @@ func update_score_in_db(level: String, new_score: int,callback: Callable):
 		http_request_score.connect("request_completed", callback)
 
 func _on_score_update_complete(result, response_code, headers, body):
-	if GlobalVars.levelSelected == 2 and GlobalVars.score < 70:
-		get_tree().change_scene_to_file("res://game_over2.tscn")  # Change to game_over2.tscn if Level 2 is lost
-	elif GlobalVars.score >= 70:
+	if GlobalVars.score >= 70:
 		get_tree().change_scene_to_file("res://game_win.tscn")
 	else:
 		get_tree().change_scene_to_file("res://game_over.tscn")
@@ -624,24 +625,17 @@ func updateLvl1QuestionsAnswers():
 	get_tree().call_group("incorrect", "queue_free")
 	if count == len(questionSet) or count >= 10:
 		if GlobalVars.levelSelected == 1:
-			if GlobalVars.score>GlobalVars.level1score || GlobalVars.isLevel1Completed == 0:
+			if GlobalVars.score>GlobalVars.level1score:
 				GlobalVars.level1score = GlobalVars.score
-			# Send a request to update the score in the database
-				update_score_in_db("level1score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
+			update_score_in_db("level1score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
 		if GlobalVars.levelSelected == 2:
-			if GlobalVars.score>GlobalVars.level2score || GlobalVars.isLevel2Completed == 0:
-				GlobalVars.level1score = GlobalVars.score
-				update_score_in_db("level2score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
+			if GlobalVars.score>GlobalVars.level2score:
+				GlobalVars.level2score = GlobalVars.score
+			update_score_in_db("level2score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
 		if GlobalVars.levelSelected == 3:
-			if GlobalVars.score>GlobalVars.level3score || GlobalVars.isLevel3Completed == 0:
-				GlobalVars.level1score = GlobalVars.score
-				update_score_in_db("level3score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
-		await get_tree().create_timer(2.0).timeout
-		if GlobalVars.levelSelected == 2:
-			get_tree().change_scene_to_file("res://game_win2.tscn")  # Load game_win2.tscn if Level 2 is completed
-		else:
-			get_tree().change_scene_to_file("res://game_win.tscn")  # Load default win scene for other levels
-		return
+			if GlobalVars.score>GlobalVars.level3score:
+				GlobalVars.level3score = GlobalVars.score
+			update_score_in_db("level3score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
 		return;
 	# Fetch the current question and answers
 	var current_question = questionSet[count] 
@@ -651,12 +645,25 @@ func updateLvl1QuestionsAnswers():
 	else:
 		$CompoundLabel.text = current_question["question_text"]
 	$QuestionNum.text = "Q.No: "+str(count)+"/10"
+	var correctAnswer: Node2D
+	var incorrectAnswer1: Node2D
+	var incorrectAnswer2: Node2D
+	var incorrectAnswer3: Node2D
 	# Update with your column names
 	# Instantiate the correct and incorrect answer scenes
-	var correctAnswer = correct_answers_scene.instantiate()
-	var incorrectAnswer1 = incorrect_answers_scene.instantiate()
-	var incorrectAnswer2 = incorrect_answers_scene.instantiate()
-	var incorrectAnswer3 = incorrect_answers_scene.instantiate()
+	if GlobalVars.levelSelected == 3:
+		correctAnswer = correct_answers_sceneLevel3.instantiate()
+		incorrectAnswer1 = incorrect_answers_sceneLevel3.instantiate()
+		incorrectAnswer2 = incorrect_answers_sceneLevel3.instantiate()
+		incorrectAnswer3 = incorrect_answers_sceneLevel3.instantiate()
+	else:
+		correctAnswer = correct_answers_scene.instantiate()
+		incorrectAnswer1 = incorrect_answers_scene.instantiate()
+		incorrectAnswer2 = incorrect_answers_scene.instantiate()
+		incorrectAnswer3 = incorrect_answers_scene.instantiate()
+
+	
+
 
 	# Update the answer labels with the correct and incorrect answers
 	correctAnswer.get_node("Label").text = current_question["correctOption"]
@@ -668,30 +675,27 @@ func updateLvl1QuestionsAnswers():
 	incorrectAnswer2.get_node("Label").self_modulate = Color(1, 1, 0)  # Blue color
 	incorrectAnswer3.get_node("Label").self_modulate = Color(1, 1, 0)  # Yellow color
 	if GlobalVars.levelSelected == 3:
-		set_font_size(correctAnswer.get_node("Label"),24)
-		set_font_size(incorrectAnswer1.get_node("Label"),24)
-		set_font_size(incorrectAnswer2.get_node("Label"),24)
-		set_font_size(incorrectAnswer3.get_node("Label"),24)
+		set_font_size(correctAnswer.get_node("Label"),30)
+		set_font_size(incorrectAnswer1.get_node("Label"),30)
+		set_font_size(incorrectAnswer2.get_node("Label"),30)
+		set_font_size(incorrectAnswer3.get_node("Label"),30)
 	var screen_width =1200 
-	var base_y = 100 # The vertical position where the answers will be aligned
+	var base_y = 150 # The vertical position where the answers will be aligned
 	if GlobalVars.levelSelected == 1:
 		 # Width of the area where answers are to be displayed
 		base_y = 100
 	elif GlobalVars.levelSelected == 2:  # Width of the area where answers are to be displayed
 		base_y = 150
-		
-		
-		
 	var num_answers = 4  # Total number of answers to display
-	var answer_width = 150  # Estimated width of each answer node
+	var answer_width = 170  # Estimated width of each answer node
 	var total_width = num_answers * answer_width  # Total width all answers will occupy
-	var start_x = (screen_width - total_width) / 2  # Start position to center the answers
+	var start_x = (screen_width - total_width) / 2 # Start position to center the answers
 
 	var positions = [
 		Vector2((screen_width - (4 * answer_width)) / 2, base_y),  # Position 1
-		Vector2((screen_width - (4 * answer_width)) / 2 + answer_width * 1, base_y),  # Position 2
-		Vector2((screen_width - (4 * answer_width)) / 2 + answer_width * 2, base_y),  # Position 3
-		Vector2((screen_width - (4 * answer_width)) / 2 + answer_width * 3, base_y)   # Position 4
+		Vector2((screen_width - (4 * answer_width)) / 2 + answer_width * 1-10, base_y),  # Position 2
+		Vector2((screen_width - (4 * answer_width)) / 2 + answer_width * 2-10, base_y),  # Position 3
+		Vector2((screen_width - (4 * answer_width)) / 2 + answer_width * 3-10, base_y)   # Position 4
 	]
 
 	# Shuffle the positions to randomize the answer placements
@@ -706,19 +710,15 @@ func updateLvl1QuestionsAnswers():
 	children.shuffle()
 	for child in children:
 		get_parent().add_child(child) 
-		await get_tree().create_timer(0).timeout  # Wait for 1 second between spawns
+		await get_tree().create_timer(0.5).timeout  # Wait for 1 second between spawns
 
-	
 
 func _on_start_button_pressed():
 	print(GlobalVars.userEmail,"is playing")
 	Audio.button_hit()
 	$StartButton.hide()
 	fetch_questions()
-	# Start fetching questions based on the selected level
 
-
-# Function called when the player hits an answer
 func _on_player_hit_answer():
 	updateLvl1QuestionsAnswers()
 

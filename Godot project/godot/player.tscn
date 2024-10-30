@@ -54,6 +54,5 @@ shape = SubResource("CapsuleShape2D_ofh20")
 position = Vector2(-1.25, -78.75)
 
 [node name="ShootTimer" type="Timer" parent="."]
-wait_time = 3.0
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

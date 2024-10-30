@@ -1,0 +1,88 @@
+[gd_scene load_steps=16 format=3 uid="uid://l8c4jdovc7kb"]
+
+[ext_resource type="Script" path="res://level_4.gd" id="1_5xcys"]
+[ext_resource type="Shader" path="res://Shader/Transparent.gdshader" id="1_nalqf"]
+[ext_resource type="PackedScene" uid="uid://mouvuk22mn85" path="res://hud.tscn" id="1_whrfj"]
+[ext_resource type="PackedScene" uid="uid://coom2gtmojaa0" path="res://answer_spawn.tscn" id="2_sq4kn"]
+[ext_resource type="PackedScene" uid="uid://2tvohq7u2ygs" path="res://player.tscn" id="3_6s5mm"]
+[ext_resource type="PackedScene" uid="uid://cge8mgijxca8v" path="res://kill_plane.tscn" id="4_hrdho"]
+[ext_resource type="PackedScene" uid="uid://b8r4212keejxx" path="res://pause_menu.tscn" id="5_h48xh"]
+[ext_resource type="PackedScene" uid="uid://cstan4t6ev2bb" path="res://background_3.tscn" id="6_vohfs"]
+[ext_resource type="AudioStream" uid="uid://w85gdxq5ey5x" path="res://audio/airplane_ambience-6830.mp3" id="7_p7k2l"]
+[ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="9_vfa1v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ndj28"]
+shader = ExtResource("1_nalqf")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88d5h"]
+bg_color = Color(0.856751, 0.492307, 0.279336, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3qy6"]
+bg_color = Color(0.856019, 0.497394, 0.204357, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vycp2"]
+bg_color = Color(0.854902, 0.498039, 0.203922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7f1b"]
+bg_color = Color(0.568627, 0.054902, 0.741176, 1)
+
+[node name="Level4" type="Node2D"]
+material = SubResource("ShaderMaterial_ndj28")
+script = ExtResource("1_5xcys")
+
+[node name="Hud" parent="." instance=ExtResource("1_whrfj")]
+
+[node name="AnswerSpawn" parent="." instance=ExtResource("2_sq4kn")]
+
+[node name="Player" parent="." instance=ExtResource("3_6s5mm")]
+position = Vector2(546, 602)
+
+[node name="KillPlane" parent="." instance=ExtResource("4_hrdho")]
+
+[node name="Pause_menu" parent="." instance=ExtResource("5_h48xh")]
+visible = false
+
+[node name="Background2" parent="." instance=ExtResource("6_vohfs")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_p7k2l")
+autoplay = true
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 845.0
+offset_top = 9.0
+offset_right = 1119.0
+offset_bottom = 90.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_88d5h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q3qy6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vycp2")
+text = "For Question..Click here..."
+
+[node name="Window" type="Window" parent="."]
+transparent_bg = true
+title = "Question"
+initial_position = 5
+size = Vector2i(1000, 300)
+visible = false
+transparent = true
+theme_override_styles/embedded_unfocused_border = SubResource("StyleBoxFlat_l7f1b")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_vfa1v")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Charles Wiesner patented a product that can remove the skunk smell from pets that were sprayed by skunks. The product uses an oxidizing agent to break down smelly molecules called thiols into odorless sulfonic acids. He tested multiple possible oxidizing agents. Which is the strongest oxidizing agent listed in the following reduction half-reactions that can leave your pet smelling fresh and clean after being sprayed by a skunk?
+〖OCl〗^- (aq)+ H_2 O (l)+2 e^-→ 〖Cl〗^- (aq)+2 〖OH〗^-  (aq)   E^0=+0.89 V 
+2 〖IO〗_3^-  (aq)+12 H^+  (aq)+10 e^-  → I_2  (s)+6 H_2 O (l)   E^0= +1.20 V
+〖MnO〗_4^-  (aq)+4 H^+  (aq)+3 e^-  → 〖MnO〗_2  (s)+ 2 H_2 O (l)    E^0= +1.69 V  ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]

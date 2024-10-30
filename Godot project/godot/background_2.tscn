@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://hecawle7r20e"]
 
 [ext_resource type="Script" path="res://background_1.gd" id="1_vcdnr"]
-[ext_resource type="Texture2D" uid="uid://bkd2tt7e8pl42" path="res://bg-2.jpeg" id="2_3sbxm"]
+[ext_resource type="Texture2D" uid="uid://dw6hmbe8lkurg" path="res://bg.jpeg" id="2_d1vuh"]
 [ext_resource type="Texture2D" uid="uid://df5gxv23aher6" path="res://austronaut-removebg-preview.png" id="4_u5rsy"]
 [ext_resource type="Texture2D" uid="uid://cv1ry23v2r58h" path="res://backgrounds/background1/parallax-space-stars.png" id="6_cc7x4"]
 [ext_resource type="Texture2D" uid="uid://cmqyeyk0n68m0" path="res://astroid_lev_2-removebg-preview.png" id="6_pqtrw"]
@@ -28,10 +28,10 @@ script = ExtResource("1_vcdnr")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_repeat = 3
 material = SubResource("ShaderMaterial_etlcd")
-position = Vector2(575.216, 330.286)
+position = Vector2(554.027, 330.286)
 rotation = 1.5708
-scale = Vector2(1.15316, 3.83798)
-texture = ExtResource("2_3sbxm")
+scale = Vector2(1.15316, 1.03867)
+texture = ExtResource("2_d1vuh")
 
 [node name="Layer1" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.3, 0.3)

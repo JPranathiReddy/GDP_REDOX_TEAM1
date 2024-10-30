@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://cstan4t6ev2bb"]
 
 [ext_resource type="Script" path="res://background_1.gd" id="1_yijvi"]
-[ext_resource type="Texture2D" uid="uid://c77icecoerluw" path="res://wp3028471-purple-space-wallpapers.jpg" id="2_ouapy"]
-[ext_resource type="Texture2D" uid="uid://bpqennwns51aw" path="res://jelly_planet-removebg-preview.png" id="3_00rf2"]
+[ext_resource type="Texture2D" uid="uid://cjhaagkvk87ur" path="res://wp3028471-purple-space-wallpapers.jpg" id="2_ouapy"]
+[ext_resource type="Texture2D" uid="uid://bnvjv080rb3p" path="res://jelly_planet-removebg-preview.png" id="3_00rf2"]
 [ext_resource type="Texture2D" uid="uid://cv1ry23v2r58h" path="res://backgrounds/background1/parallax-space-stars.png" id="4_5quk0"]
-[ext_resource type="Texture2D" uid="uid://nkwna8ym11qx" path="res://astroid_lev_3-removebg-preview.png" id="5_og85i"]
-[ext_resource type="Texture2D" uid="uid://lsytgwwtuvs6" path="res://red_planet-removebg-preview.png" id="6_k50g2"]
+[ext_resource type="Texture2D" uid="uid://dfpsgetb40r6w" path="res://astroid_lev_3-removebg-preview.png" id="5_og85i"]
+[ext_resource type="Texture2D" uid="uid://cxnp7jc5pvtbp" path="res://red_planet-removebg-preview.png" id="6_k50g2"]
 [ext_resource type="Texture2D" uid="uid://dn7xyqoup3p3f" path="res://pngwing.com (4).png" id="7_cutc2"]
 [ext_resource type="PackedScene" uid="uid://c2wqxap8flosi" path="res://hearts_container.tscn" id="8_8uqkk"]
 
@@ -22,15 +22,15 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_etlcd"]
 shader = SubResource("Shader_g4odx")
 
-[node name="Background2" type="ParallaxBackground"]
+[node name="Background3" type="ParallaxBackground"]
 script = ExtResource("1_yijvi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_repeat = 3
 material = SubResource("ShaderMaterial_etlcd")
-position = Vector2(576.526, 326.338)
+position = Vector2(572.526, 322.338)
 rotation = 1.5708
-scale = Vector2(1.03772, 1.10933)
+scale = Vector2(0.362281, 1.10933)
 texture = ExtResource("2_ouapy")
 
 [node name="Layer1" type="ParallaxLayer" parent="."]

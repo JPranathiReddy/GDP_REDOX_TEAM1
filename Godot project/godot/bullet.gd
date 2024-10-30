@@ -4,8 +4,6 @@ var speed = 500.0
 var direction = Vector2.UP
 signal hit_answer
 var http_request_bullet:HTTPRequest
-#@onready var correct_sound = $CorrectSound
-#@onready var incorrect_sound = $IncorrectSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,8 +48,8 @@ func _on_body_entered(body):
 	
 	hit_answer.emit()
 	queue_free()
-func update_score_in_db(level: String, new_score: int):
 
+func update_score_in_db(level: String, new_score: int):
 	var url = "https://redoxui.onrender.com/update_score"
 	var data = {
 		"email": GlobalVars.userEmail,  

@@ -11,3 +11,6 @@ func button_hit():
 	$ButtonClick.play()
 func level1_bgm():
 	$Level1Bgm.play()
+func letsGo():
+	$LetsGo.play()
+	

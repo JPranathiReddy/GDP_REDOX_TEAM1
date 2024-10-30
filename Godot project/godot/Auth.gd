@@ -37,6 +37,7 @@ func login_signup(url: String, email: String, password: String, is_login: bool):
 
 
 func _on_login_button_pressed():
+	$Label.text = ""
 	Audio.button_hit()
 	var email = $VBoxContainer/email.text
 	var password = $VBoxContainer/password.text
@@ -53,31 +54,36 @@ func _on_http_request_request_completed(result, response_code, headers, body):
 	print("error var: ",error)
 	if error != OK:
 		print("JSON Parse Error: ", json.get_error_message(), " in ", raw_body, " at line ", json.get_error_line())
-		$Label.text = "Unexpected error occured , please contact Dr bellamy."
+		$Label.text = "Unexpected error occured , please contact Admin"
 		return 
 	var response = json.data
 
 	if response_code == 200:
 		if is_password_reset:
-			# Handle password reset response
 			print("Password reset successful")
 			$Label.text = "Password reset email sent. Check your inbox."
 			is_password_reset = false
 		else:
-			# Handle login/signup response
 			if typeof(response) == TYPE_DICTIONARY: 
 				if response.has("idToken"): 
 					var id_token = response["idToken"]
-					$RichTextLabel.text = "Authentication successful!"
 					if is_login_action:
-						GlobalVars.userEmail = $VBoxContainer/email.text
-						get_tree().change_scene_to_file("res://LvlMenu.tscn")
+						$Label.text = "Loading your room!"
+						var http = HTTPRequest.new()
+						add_child(http)
+						http.connect("request_completed",Callable(self, "_on_progress_fetched"))
+						var email = $VBoxContainer/email.text
+						var url = "https://redoxui.onrender.com/get_user_progress/" + email
+						var err = http.request(url)
+						if err != OK:
+							print("Error while requesting data: ", err)
+						GlobalVars.userEmail = email
 				else:
 					print("Error: 'idToken' not found in response.")
 					$Label.text = "Authentication failed. Please try again."
 			else:
 				print("Unexpected data structure received.")
-				$Label.text = "Unexpected error occured , please contact Dr bellamy."
+				$Label.text = "Unexpected error occured, please contact admin."
 		
 	else:
 		var error_message = body.get_string_from_utf8()
@@ -89,8 +95,23 @@ func _on_http_request_request_completed(result, response_code, headers, body):
 				$Label.text = "Error occurred during password reset. Please try again."
 			is_password_reset = false
 		else:
-			$Label.text = "Please enter valid details."
-
+			$Label.text = "Please enter valid details."	
+func _on_progress_fetched(result, response_code, headers, body):
+	var json_parser = JSON.new()
+	var body_string = body.get_string_from_utf8()
+	if response_code == 200:
+		var progress = json_parser.parse_string(body_string)
+		GlobalVars.level1score = progress["Level1Score"]
+		GlobalVars.level2score = progress["Level2Score"]
+		GlobalVars.level3score = progress["Level3Score"]
+		Audio.letsGo()
+		await get_tree().create_timer(3.0).timeout
+		get_tree().change_scene_to_file("res://LvlMenu.tscn")
+	else:
+		$Label.text = "Try login again!"
+		print(result)
+		print(body_string)
+		print("Failed to fetch user progress. Status Code: ", response_code)
 
 func _on_rich_text_label_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -122,6 +143,3 @@ func send_password_reset_request(email: String):
 		print("HTTP Request error: ", error)
 	else:
 		print("Password reset request sent.")
-
-
-

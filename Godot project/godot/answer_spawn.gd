@@ -77,6 +77,8 @@ func update_score_in_db(level: String, new_score: int,callback: Callable):
 func _on_score_update_complete(result, response_code, headers, body):
 	if GlobalVars.levelSelected == 2 and GlobalVars.score < 70:
 		get_tree().change_scene_to_file("res://game_over2.tscn")  # Change to game_over2.tscn if Level 2 is lost
+	elif GlobalVars.levelSelected == 2 and GlobalVars.score >= 70:
+			get_tree().change_scene_to_file("res://game_win2.tscn")
 	elif GlobalVars.score >= 70:
 		get_tree().change_scene_to_file("res://game_win.tscn")
 	else:

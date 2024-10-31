@@ -18,7 +18,7 @@ The purpose of this Gaming project is to create an engaging, educational game pl
 
 # Detailed Overview of Game:
 
---> User Registration and Login: The game begins with a registration and login page, where players must create an account to proceed. Users can register with any email to play; however, providing a valid email enables the option to reset a forgotten password through a change-password link sent to the registered email. There are no specific password requirements. Once registered, players can log in with the provided email and password.
+**User Registration and Login:** The game begins with a registration and login page, where players must create an account to proceed. Users can register with any email to play; however, providing a valid email enables the option to reset a forgotten password through a change-password link sent to the registered email. There are no specific password requirements. Once registered, players can log in with the provided email and password.
 
 --> Instructions and Navigation: Upon logging in, players will find an instructions icon to learn about the gameplay and controls. An exit button is available, allowing players to enter or exit as they wish.
 

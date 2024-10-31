@@ -20,25 +20,25 @@ The purpose of this Gaming project is to create an engaging, educational game pl
 
 **User Registration and Login:** The game begins with a registration and login page, where players must create an account to proceed. Users can register with any email to play; however, providing a valid email enables the option to reset a forgotten password through a change-password link sent to the registered email. There are no specific password requirements. Once registered, players can log in with the provided email and password.
 
---> Instructions and Navigation: Upon logging in, players will find an instructions icon to learn about the gameplay and controls. An exit button is available, allowing players to enter or exit as they wish.
+**Instructions and Navigation:** Upon logging in, players will find an instructions icon to learn about the gameplay and controls. An exit button is available, allowing players to enter or exit as they wish.
 
---> Game Levels: The game features four levels, each designed to be progressively challenging. Players must complete each level successfully to unlock the next.
+**Game Levels:** The game features four levels, each designed to be progressively challenging. Players must complete each level successfully to unlock the next.
 
---> Unlocking Levels: Players start at Level 1. To advance, each level must be completed with a passing score, unlocking the subsequent level.
+**Unlocking Levels:** Players start at Level 1. To advance, each level must be completed with a passing score, unlocking the subsequent level.
 
---> Questions and Lives: Each level includes 10 questions, with players given 3 lives per level. This allows for up to 2 incorrect answers before the level ends.
+**Questions and Lives:** Each level includes 10 questions, with players given 3 lives per level. This allows for up to 2 incorrect answers before the level ends.
 
---> Passing Requirement: To clear a level and unlock the next, players need a minimum score of 70% (7 correct answers out of 10).
+**Passing Requirement:** To clear a level and unlock the next, players need a minimum score of 70% (7 correct answers out of 10).
 
---> Shooting Mechanic: During gameplay, answer choices fall from the top of the screen, and players must use a shooting mechanism to select the correct answer according to the question prompt.
+**Shooting Mechanic:** During gameplay, answer choices fall from the top of the screen, and players must use a shooting mechanism to select the correct answer according to the question prompt.
 
---> Progress Tracking: Each correct answer increases the player’s progress bar by 10%, indicating their advancement through the level.
+**Progress Tracking:** Each correct answer increases the player’s progress bar by 10%, indicating their advancement through the level.
 
---> Audio Effects: Aesthetic background music enhances the gameplay, along with sound effects for correct and incorrect answers, and firing actions, adding immersion to the experience.
+**Audio Effects:** Aesthetic background music enhances the gameplay, along with sound effects for correct and incorrect answers, and firing actions, adding immersion to the experience.
 
---> Win and Loss Screens: Upon completing or failing a level, players are shown win or loss screens accompanied by exciting music and effects to boost engagement and encourage players to focus on the game.
+**Win and Loss Screens:** Upon completing or failing a level, players are shown win or loss screens accompanied by exciting music and effects to boost engagement and encourage players to focus on the game.
 
---> Question and User Management: The game includes a user-friendly interface for the administrator to manage questions and answers within the database. Administrators must register using authorized credentials to access this management portal. Once logged in, the admin can add, modify, or delete questions and answers across the four game levels.
+**Question and User Management:** The game includes a user-friendly interface for the administrator to manage questions and answers within the database. Administrators must register using authorized credentials to access this management portal. Once logged in, the admin can add, modify, or delete questions and answers across the four game levels.
 Additionally, administrators can view detailed user data, including the number of registered users and each player’s progress, completed levels, and scores. This data is presented in two formats: a bar chart overview and a detailed, scrollable list for individual user statistics. The admin also has the option to download user data as an Excel report for future reference.
 
 

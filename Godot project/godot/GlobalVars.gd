@@ -1,5 +1,6 @@
 extends Node
 
+var speed
 var levelSelected = 0
 var score = 0
 var progress = 0.0

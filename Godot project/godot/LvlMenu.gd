@@ -59,22 +59,22 @@ func unlock_levels_based_on_score():
 func _on_button_1_pressed():
 	Audio.button_hit()
 	GlobalVars.levelSelected = 1
-	get_tree().change_scene_to_file("res://level_1.tscn")
+	get_tree().change_scene_to_file("res://difficulty_sel.tscn")
 
 func _on_button_2_pressed():
 	Audio.button_hit()
 	GlobalVars.levelSelected = 2
-	get_tree().change_scene_to_file("res://level_2.tscn")
+	get_tree().change_scene_to_file("res://difficulty_sel.tscn")
 
 
 func _on_button_3_pressed():
 	Audio.button_hit()
 	GlobalVars.levelSelected = 3
-	get_tree().change_scene_to_file("res://level_3.tscn")
+	get_tree().change_scene_to_file("res://difficulty_sel.tscn")
 func _on_button_4_pressed():
 	Audio.button_hit()
 	GlobalVars.levelSelected = 4
-	get_tree().change_scene_to_file("res://level_4.tscn")
+	get_tree().change_scene_to_file("res://difficulty_sel.tscn")
 	
 func _on_texture_button_pressed():
 	Audio.button_hit()

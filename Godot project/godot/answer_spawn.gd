@@ -180,7 +180,7 @@ func updateLvl1QuestionsAnswers():
 	children.shuffle()
 	for child in children:
 		get_parent().add_child(child) 
-		await get_tree().create_timer(0).timeout  # Wait for 1 second between spawns
+		await get_tree().create_timer(0.5).timeout  # Wait for 1 second between spawns
 func _on_start_button_pressed():
 	print(GlobalVars.userEmail,"is playing")
 	Audio.button_hit()

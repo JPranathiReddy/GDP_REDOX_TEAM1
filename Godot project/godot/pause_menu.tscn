@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://brbav0t7rm43p" path="res://Timer.jpg" id="4_y1k50"]
 [ext_resource type="Texture2D" uid="uid://d2x68q20yxfph" path="res://QuitStable.jpg" id="5_w5nqe"]
 [ext_resource type="Texture2D" uid="uid://cqs3hosk50xs1" path="res://QuitPressed.jpg" id="6_va2cs"]
-[ext_resource type="Texture2D" uid="uid://bvq7jpem41k1c" path="res://QuitHover.jpg" id="7_wapu0"]
+[ext_resource type="Texture2D" uid="uid://bvq7jpem41k1c" path="res://Quithover.jpg" id="7_wapu0"]
 
 [sub_resource type="Theme" id="Theme_rx1ge"]
 

@@ -27,10 +27,9 @@ stream = ExtResource("7_8nu06")
 autoplay = true
 
 [node name="Pause_menu" parent="." instance=ExtResource("8_2fwre")]
-visible = false
-offset_left = 500.0
-offset_top = 262.0
-offset_right = 500.0
-offset_bottom = 262.0
+offset_left = 430.0
+offset_top = 161.0
+offset_right = 511.0
+offset_bottom = 161.0
 
 [node name="Background3" parent="." instance=ExtResource("8_c1xqc")]

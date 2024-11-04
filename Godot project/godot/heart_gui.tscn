@@ -11,8 +11,8 @@ offset_bottom = 109.0
 script = ExtResource("1_4wv6u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3, -1)
+position = Vector2(29.0343, 17.587)
 rotation = -0.380482
-scale = Vector2(0.24, 0.241848)
+scale = Vector2(0.225889, 0.21611)
 texture = ExtResource("2_p8xt5")
 centered = false

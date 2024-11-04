@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byqvxawo0oyec"
-path="res://.godot/imported/resume btn.jpg-241b5806a805a5ae452e9610937bcc4a.ctex"
+uid="uid://brbav0t7rm43p"
+path="res://.godot/imported/Timer.jpg-c9187cd7801a37e553f6f15254c43498.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resume btn.jpg"
-dest_files=["res://.godot/imported/resume btn.jpg-241b5806a805a5ae452e9610937bcc4a.ctex"]
+source_file="res://Timer.jpg"
+dest_files=["res://.godot/imported/Timer.jpg-c9187cd7801a37e553f6f15254c43498.ctex"]
 
 [params]
 

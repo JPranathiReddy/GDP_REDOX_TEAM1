@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://coom2gtmojaa0"]
+[gd_scene load_steps=8 format=3 uid="uid://coom2gtmojaa0"]
 
 [ext_resource type="Script" path="res://answer_spawn.gd" id="1_vwc8m"]
 [ext_resource type="PackedScene" uid="uid://ccxoogwvxqww5" path="res://incorrect_answers.tscn" id="2_fxttj"]
@@ -9,6 +9,47 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 40, -240, 0, 0, 0, 0, 864, -248, 0, 0, 0, 0, 452, -288, 0, 0, 0, 0, 216.227, -260, 0, 0, 0, 0, 40, -240)
 }
 point_count = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5hx0"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.987052, 0.747616, 0.491734, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3x4i"]
+bg_color = Color(0.929282, 0.336695, 0.723721, 1)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.7308, 0.336451, 0.638984, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0fcf"]
+bg_color = Color(0.512846, 0.659064, 0.266435, 1)
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.117031, 0.560189, 0.454528, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="AnswerSpawn" type="Node2D"]
 script = ExtResource("1_vwc8m")
@@ -51,8 +92,14 @@ offset_left = 443.0
 offset_top = 283.0
 offset_right = 682.0
 offset_bottom = 348.0
+theme_override_colors/font_color = Color(0.882353, 0.666667, 0.882353, 1)
+theme_override_colors/font_pressed_color = Color(0.462745, 0.890196, 0.501961, 1)
+theme_override_colors/font_hover_color = Color(0.999795, 0.300368, 0.237101, 1)
 theme_override_fonts/font = ExtResource("3_8gdoj")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_g5hx0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v3x4i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l0fcf")
 text = "Start Level"
 metadata/_edit_use_anchors_ = true
 

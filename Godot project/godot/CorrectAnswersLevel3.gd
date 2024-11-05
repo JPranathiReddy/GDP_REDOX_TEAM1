@@ -19,13 +19,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if GlobalVars.levelSelected==1:
-		velocity = direction1 * speed*0.8
+		velocity = direction1 * GlobalVars.speed
 	elif GlobalVars.levelSelected==2:
-		velocity = direction1*speed*1.5
+		velocity = direction1* GlobalVars.speed
 	elif GlobalVars.levelSelected==3:
-		velocity = direction1*speed*0.4
+		velocity = direction1*GlobalVars.speed
 	elif GlobalVars.levelSelected==4:
-		velocity = direction1*speed*2
+		velocity = direction1* GlobalVars.speed
 		if position.y > 200:
 			time_passed += delta
 			var new_x = position.x + sin(time_passed * x_speed) * x_amplitude

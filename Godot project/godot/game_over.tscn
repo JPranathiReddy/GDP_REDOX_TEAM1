@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c3ymq2fphthbm"]
+[gd_scene load_steps=26 format=3 uid="uid://bxgptvdq2aomo"]
 
 [ext_resource type="Texture2D" uid="uid://ctkq00av6mf1v" path="res://player/Destroyed.png" id="1_lcunu"]
 [ext_resource type="Script" path="res://game_over.gd" id="1_puckw"]

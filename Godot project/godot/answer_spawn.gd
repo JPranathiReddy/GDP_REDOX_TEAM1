@@ -70,7 +70,6 @@ func update_score_in_db(level: String, new_score: int,callback: Callable):
 	var err = http_request_score.request(url, headersDB, HTTPClient.METHOD_POST, json_data)
 	if err != OK:
 		print("Error while requesting score update: ", err)
-		callback.call()
 	else:
 		http_request_score.connect("request_completed", callback)
 

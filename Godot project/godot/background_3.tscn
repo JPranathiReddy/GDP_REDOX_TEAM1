@@ -28,9 +28,9 @@ script = ExtResource("1_yijvi")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_repeat = 3
 material = SubResource("ShaderMaterial_etlcd")
-position = Vector2(572.526, 322.338)
+position = Vector2(575.701, 327.1)
 rotation = 1.5708
-scale = Vector2(0.362281, 1.10933)
+scale = Vector2(0.381427, 1.17662)
 texture = ExtResource("2_ouapy")
 
 [node name="Layer1" type="ParallaxLayer" parent="."]

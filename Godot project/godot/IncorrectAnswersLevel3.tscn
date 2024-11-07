@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://tn14ga8a57uc"]
+[gd_scene load_steps=4 format=3 uid="uid://qx833ookd4ji"]
 
 [ext_resource type="Script" path="res://IncorrectAnswersLevel3.gd" id="1_878qe"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_shm00"]

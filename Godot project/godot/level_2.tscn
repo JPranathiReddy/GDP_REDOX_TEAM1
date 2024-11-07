@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://2tvohq7u2ygs" path="res://player.tscn" id="4_kc4jn"]
 [ext_resource type="PackedScene" uid="uid://cge8mgijxca8v" path="res://kill_plane.tscn" id="5_qwgbu"]
 [ext_resource type="AudioStream" uid="uid://w85gdxq5ey5x" path="res://audio/airplane_ambience-6830.mp3" id="8_x05ho"]
-[ext_resource type="PackedScene" uid="uid://b8r4212keejxx" path="res://pause_menu.tscn" id="9_bp65a"]
+[ext_resource type="PackedScene" uid="uid://bm2om2shiw28e" path="res://quitbutton.tscn" id="9_eya23"]
 [ext_resource type="PackedScene" uid="uid://hecawle7r20e" path="res://background_2.tscn" id="10_h3lyi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sg5ag"]
@@ -34,10 +34,6 @@ position = Vector2(6, -11)
 stream = ExtResource("8_x05ho")
 autoplay = true
 
-[node name="Pause_menu" parent="." instance=ExtResource("9_bp65a")]
-offset_left = 434.0
-offset_top = 225.0
-offset_right = 508.0
-offset_bottom = 225.0
-
 [node name="Background2" parent="." instance=ExtResource("10_h3lyi")]
+
+[node name="quitbutton" parent="." instance=ExtResource("9_eya23")]

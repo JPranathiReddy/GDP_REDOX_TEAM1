@@ -1,10 +1,114 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3714l5hkgphh"]
+[gd_scene load_steps=14 format=3 uid="uid://b3714l5hkgphh"]
 
 [ext_resource type="Script" path="res://Register.gd" id="1_8kniy"]
 [ext_resource type="AudioStream" uid="uid://w85gdxq5ey5x" path="res://audio/airplane_ambience-6830.mp3" id="2_1ax5c"]
 [ext_resource type="Texture2D" uid="uid://bgp2hprqdogrw" path="res://astronaut-4106766_1280.jpg" id="2_cnc6b"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="3_b3hoe"]
 [ext_resource type="Texture2D" uid="uid://c7s5pnetutemm" path="res://back button.png" id="5_7fa50"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joax2"]
+bg_color = Color(0.366595, 0.366595, 0.366594, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.986752, 0.986752, 0.986752, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5jbl"]
+bg_color = Color(0.351563, 0.351563, 0.351563, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.977937, 0.977937, 0.977937, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7or0"]
+bg_color = Color(0.332881, 0.332881, 0.332881, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.977937, 0.977937, 0.977937, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50dwq"]
+bg_color = Color(0.31802, 0.31802, 0.31802, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.95158, 0.95158, 0.95158, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btewn"]
+bg_color = Color(0.306923, 0.306923, 0.306923, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.986752, 0.986752, 0.986752, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7r30"]
+bg_color = Color(0.742136, 0.556807, 0.405145, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.85098, 0.196078, 0.0588235, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6i835"]
+bg_color = Color(0.278431, 0.898039, 0.290196, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.951332, 0.487536, 0.263913, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ywsvd"]
+bg_color = Color(0.660806, 0.450028, 0.125496, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 0.372549, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -44,24 +148,28 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_b3hoe")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_joax2")
 placeholder_text = "FirstName"
 
 [node name="SID2" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_b3hoe")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_n5jbl")
 placeholder_text = "LastName"
 
 [node name="Email" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_b3hoe")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_j7or0")
 placeholder_text = "Email ID"
 
 [node name="Password" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_b3hoe")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_50dwq")
 placeholder_text = "Password"
 secret = true
 secret_character = "*"
@@ -70,6 +178,7 @@ secret_character = "*"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_b3hoe")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_btewn")
 placeholder_text = "Confirm password"
 secret = true
 secret_character = "*"
@@ -94,6 +203,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_b3hoe")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_e7r30")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6i835")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ywsvd")
 text = "Register
 "
 

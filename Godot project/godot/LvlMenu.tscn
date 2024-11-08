@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cadu55fl1wwqs" path="res://light-bulb.png" id="7_ynjf0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_coa7m"]
-bg_color = Color(0.168579, 0.475776, 0.159526, 1)
+bg_color = Color(0.168627, 0.752941, 0.160784, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -23,7 +23,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4mnc"]
-bg_color = Color(0.335541, 0.807856, 0.642651, 1)
+bg_color = Color(0.337255, 0.807843, 0.176471, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -36,7 +36,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqs8h"]
-bg_color = Color(0.616956, 0.936947, 0.323921, 1)
+bg_color = Color(0.337255, 0.807843, 0.176471, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -49,7 +49,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3qu"]
-bg_color = Color(0.10582, 0.467616, 0.164982, 1)
+bg_color = Color(0.337255, 0.807843, 0.176471, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -62,7 +62,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w477s"]
-bg_color = Color(0.336689, 0.747825, 0.64729, 1)
+bg_color = Color(0.337255, 0.807843, 0.176471, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -88,7 +88,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcq4n"]
-bg_color = Color(0.139288, 0.480657, 0.106564, 1)
+bg_color = Color(0.337255, 0.807843, 0.176471, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -101,7 +101,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cupyi"]
-bg_color = Color(0.519008, 0.847162, 0.722331, 1)
+bg_color = Color(0.337255, 0.807843, 0.176471, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -114,7 +114,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8h2ua"]
-bg_color = Color(0.398711, 0.75842, 0.331614, 1)
+bg_color = Color(0.337255, 0.807843, 0.176471, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -441,10 +441,10 @@ text = "Close"
 
 [node name="InstructionLabel" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 872.0
-offset_top = 546.0
-offset_right = 997.0
-offset_bottom = 588.0
+offset_left = 902.0
+offset_top = 549.0
+offset_right = 1027.0
+offset_bottom = 591.0
 theme_override_fonts/font = ExtResource("3_onvdp")
 theme_override_font_sizes/font_size = 20
 text = "Instructions"
@@ -453,10 +453,10 @@ vertical_alignment = 1
 
 [node name="backLabel" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 1035.0
-offset_top = 552.0
-offset_right = 1091.0
-offset_bottom = 577.0
+offset_left = 1069.0
+offset_top = 555.0
+offset_right = 1125.0
+offset_bottom = 580.0
 theme_override_fonts/font = ExtResource("3_onvdp")
 theme_override_font_sizes/font_size = 20
 text = "Back"

@@ -5,7 +5,7 @@
 [node name="heartsContainer" type="HBoxContainer"]
 offset_left = 4.0
 offset_top = 5.0
-offset_right = 558.0
-offset_bottom = 424.0
+offset_right = 204.0
+offset_bottom = 105.0
 theme_override_constants/separation = 10
 script = ExtResource("1_ql588")

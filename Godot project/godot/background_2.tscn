@@ -103,7 +103,8 @@ texture = ExtResource("8_0yh3y")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("9_ty5wo")]
-offset_left = -18.0
-offset_top = 84.0
-offset_right = 484.0
-offset_bottom = 247.0
+offset_left = 8.0
+offset_top = 68.0
+offset_right = 510.0
+offset_bottom = 231.0
+scale = Vector2(0.95258, 1.02774)

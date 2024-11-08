@@ -47,6 +47,7 @@ custom_minimum_size = Vector2(300, 50)
 offset_left = 4.0
 offset_right = 304.0
 offset_bottom = 50.0
+scale = Vector2(0.864489, 0.867339)
 size_flags_vertical = 4
 size_flags_stretch_ratio = 20.0
 theme = SubResource("Theme_rvpfk")

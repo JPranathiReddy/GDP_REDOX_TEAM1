@@ -1,66 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://bljpxegfimoun"]
+[gd_scene load_steps=10 format=3 uid="uid://bljpxegfimoun"]
 
 [ext_resource type="Texture2D" uid="uid://cdnkimsv1kvjs" path="res://login background.jpg" id="1_7n8s6"]
 [ext_resource type="Script" path="res://Auth.gd" id="2_3bj3s"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="3_lpgcu"]
 [ext_resource type="AudioStream" uid="uid://w85gdxq5ey5x" path="res://audio/airplane_ambience-6830.mp3" id="3_ohnrb"]
 [ext_resource type="Texture2D" uid="uid://cy4egnx51sh2n" path="res://show.png" id="5_mtguo"]
-[ext_resource type="Texture2D" uid="uid://cefooh0yhn2ae" path="res://hide.png" id="6_6rau4"]
+[ext_resource type="Texture2D" uid="uid://cbv1xvvccxigr" path="res://hide.jpg" id="5_o66cp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5l7f"]
-bg_color = Color(0.351342, 0.505005, 0.764329, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_blend = true
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg54f"]
-bg_color = Color(0.98913, 0.780048, 0.595515, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.0778229, 0.640344, 0.641623, 1)
-border_blend = true
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhw2k"]
-bg_color = Color(0.75387, 0.895936, 0.41778, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.936448, 0.179323, 0.176989, 1)
-border_blend = true
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+bg_color = Color(0.539562, 0.667126, 0.87937, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qfm1"]
-bg_color = Color(0.299547, 0.299547, 0.299547, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqsg4"]
-bg_color = Color(0.347817, 0.347817, 0.347817, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.967557, 0.973412, 0.990412, 1)
-border_blend = true
 
 [node name="TextureRect" type="TextureRect"]
 anchors_preset = 15
@@ -90,8 +42,6 @@ offset_bottom = 25.24
 theme_override_fonts/font = ExtResource("3_lpgcu")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_s5l7f")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cg54f")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mhw2k")
 text = "Login"
 
 [node name="Label" type="Label" parent="."]
@@ -141,12 +91,12 @@ secret_character = "*"
 
 [node name="showpassword" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 809.0
+offset_left = 808.0
 offset_top = 283.0
-offset_right = 862.0
+offset_right = 865.0
 offset_bottom = 326.0
 texture_normal = ExtResource("5_mtguo")
-texture_pressed = ExtResource("6_6rau4")
+texture_pressed = ExtResource("5_o66cp")
 ignore_texture_size = true
 stretch_mode = 0
 

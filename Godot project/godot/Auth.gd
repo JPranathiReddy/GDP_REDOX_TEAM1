@@ -5,6 +5,7 @@ var login_url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPa
 var password_reset_url = "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=" + api_key
 var is_login_action = false
 var is_password_reset = false
+var is_password_visible = false  # New variable to track password visibility
 
 
 func _ready():
@@ -16,6 +17,17 @@ func _ready():
 	else:
 		$Label.text = "Unexpected error occured , please contact Dr bellamy."
 		print("HTTPRequest node not found.")
+
+
+func _on_showpassword_pressed():
+	is_password_visible = !is_password_visible
+	$VBoxContainer/password.secret = !is_password_visible  # Toggle the `secret` property
+
+	# Change the TextureButton's texture based on password visibility
+	if is_password_visible:
+		$showpassword.texture_normal = preload("res://hide.png")
+	else:
+		$showpassword.texture_normal = preload("res://show.png")
 
 # This function will be used for both login and signup actions.
 func login_signup(url: String, email: String, password: String, is_login: bool):
@@ -143,3 +155,5 @@ func send_password_reset_request(email: String):
 		print("HTTP Request error: ", error)
 	else:
 		print("Password reset request sent.")
+
+

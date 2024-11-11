@@ -20,9 +20,9 @@ func _process(delta):
 	if GlobalVars.levelSelected==1:
 		velocity = direction1 * GlobalVars.speed
 	elif GlobalVars.levelSelected==2:
-		velocity = direction1 * GlobalVars.speed
+		velocity = direction1 * GlobalVars.speed*1.5
 	elif GlobalVars.levelSelected==3:
-		velocity = direction1 * GlobalVars.speed
+		velocity = direction1 * GlobalVars.speed*2
 	elif GlobalVars.levelSelected==4:
 		velocity = direction1 * GlobalVars.speed
 		if position.y > 200:

@@ -1,6 +1,6 @@
 extends Node
 
-var speed
+var speed=25
 var levelSelected = 0
 var score = 0
 var progress = 0.0
@@ -30,4 +30,3 @@ func _reset_game():
 	#levelSelected=0
 	progress=0
 	currentHealth = maxHealth
-

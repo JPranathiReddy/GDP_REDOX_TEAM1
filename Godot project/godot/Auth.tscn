@@ -7,18 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cy4egnx51sh2n" path="res://show.png" id="5_mtguo"]
 [ext_resource type="Texture2D" uid="uid://cefooh0yhn2ae" path="res://hide.png" id="6_6rau4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5l7f"]
-bg_color = Color(0.351342, 0.505005, 0.764329, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_blend = true
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg54f"]
 bg_color = Color(0.98913, 0.780048, 0.595515, 1)
 border_width_left = 4
@@ -39,6 +27,18 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.936448, 0.179323, 0.176989, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5l7f"]
+bg_color = Color(0.351342, 0.505005, 0.764329, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 border_blend = true
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -89,9 +89,9 @@ offset_right = 132.392
 offset_bottom = 25.24
 theme_override_fonts/font = ExtResource("3_lpgcu")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_s5l7f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cg54f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mhw2k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s5l7f")
 text = "Login"
 
 [node name="Label" type="Label" parent="."]

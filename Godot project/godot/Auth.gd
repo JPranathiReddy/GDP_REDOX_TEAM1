@@ -18,6 +18,9 @@ func _ready():
 		$Label.text = "Unexpected error occured , please contact Dr bellamy."
 		print("HTTPRequest node not found.")
 
+func _process(delta):
+	if Input.is_action_just_pressed("login"):
+		_on_login_button_pressed()
 
 func _on_showpassword_pressed():
 	is_password_visible = !is_password_visible

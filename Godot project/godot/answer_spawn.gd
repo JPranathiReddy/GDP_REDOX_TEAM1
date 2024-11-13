@@ -140,15 +140,15 @@ func updateLvl1QuestionsAnswers():
 	incorrectAnswer1.get_node("Label").text = current_question["incorrectOption1"]
 	incorrectAnswer2.get_node("Label").text = current_question["incorrectOption2"]
 	incorrectAnswer3.get_node("Label").text = current_question["incorrectOption3"]
-	correctAnswer.get_node("Label").self_modulate = Color(1, 1, 0)  # Red color
-	incorrectAnswer1.get_node("Label").self_modulate = Color(1, 1, 0)  # Green color
-	incorrectAnswer2.get_node("Label").self_modulate = Color(1, 1, 0)  # Blue color
-	incorrectAnswer3.get_node("Label").self_modulate = Color(1, 1, 0)  # Yellow color
+	#correctAnswer.get_node("Label").self_modulate = Color(1, 1, 0)  # Red color
+	#incorrectAnswer1.get_node("Label").self_modulate = Color(1, 1, 0)  # Green color
+	#incorrectAnswer2.get_node("Label").self_modulate = Color(1, 1, 0)  # Blue color
+	#incorrectAnswer3.get_node("Label").self_modulate = Color(1, 1, 0)  # Yellow color
 	if GlobalVars.levelSelected == 3:
-		set_font_size(correctAnswer.get_node("Label"),30)
-		set_font_size(incorrectAnswer1.get_node("Label"),30)
-		set_font_size(incorrectAnswer2.get_node("Label"),30)
-		set_font_size(incorrectAnswer3.get_node("Label"),30)
+		set_font_size(correctAnswer.get_node("Label"),34)
+		set_font_size(incorrectAnswer1.get_node("Label"),34)
+		set_font_size(incorrectAnswer2.get_node("Label"),34)
+		set_font_size(incorrectAnswer3.get_node("Label"),34)
 	var screen_width =1200 
 	var base_y = 150 # The vertical position where the answers will be aligned
 	if GlobalVars.levelSelected == 1:

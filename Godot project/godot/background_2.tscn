@@ -39,7 +39,7 @@ motion_mirroring = Vector2(0, 644)
 
 [node name="Sprite2D" type="Sprite2D" parent="Layer1"]
 texture_filter = 1
-position = Vector2(1056.12, 300.21)
+position = Vector2(1117, 302)
 rotation = 0.383972
 scale = Vector2(0.193699, 0.177199)
 texture = ExtResource("4_u5rsy")

@@ -23,7 +23,7 @@ func _process(delta):
 		velocity = direction1 * GlobalVars.speed*0.8
 		move_and_slide()
 	elif GlobalVars.levelSelected==2:
-		velocity = direction1* GlobalVars.speed*1.2
+		velocity = direction1* GlobalVars.speed*1.0
 		move_and_slide()
 	elif GlobalVars.levelSelected==3:
 		velocity = direction1* GlobalVars.speed*0.5

@@ -92,24 +92,17 @@ func updateLvl1QuestionsAnswers():
 	get_tree().call_group("incorrect", "queue_free")
 	if count == len(questionSet) or count >= 10:
 		if GlobalVars.levelSelected == 1:
-			if GlobalVars.score>GlobalVars.level1score || GlobalVars.isLevel1Completed == 0:
+			if GlobalVars.score>GlobalVars.level1score:
 				GlobalVars.level1score = GlobalVars.score
-			# Send a request to update the score in the database
-				update_score_in_db("level1score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
+			update_score_in_db("level1score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
 		if GlobalVars.levelSelected == 2:
-			if GlobalVars.score>GlobalVars.level2score || GlobalVars.isLevel2Completed == 0:
-				GlobalVars.level1score = GlobalVars.score
-				update_score_in_db("level2score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
+			if GlobalVars.score>GlobalVars.level2score:
+				GlobalVars.level2score = GlobalVars.score
+			update_score_in_db("level2score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
 		if GlobalVars.levelSelected == 3:
-			if GlobalVars.score>GlobalVars.level3score || GlobalVars.isLevel3Completed == 0:
-				GlobalVars.level1score = GlobalVars.score
-				update_score_in_db("level3score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
-		await get_tree().create_timer(2.0).timeout
-		if GlobalVars.levelSelected == 2:
-			get_tree().change_scene_to_file("res://game_win2.tscn")  # Load game_win2.tscn if Level 2 is completed
-		else:
-			get_tree().change_scene_to_file("res://game_win.tscn")  # Load default win scene for other levels
-		return
+			if GlobalVars.score>GlobalVars.level3score:
+				GlobalVars.level3score = GlobalVars.score
+			update_score_in_db("level3score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
 		return;
 	# Fetch the current question and answers
 	var current_question = questionSet[count] 

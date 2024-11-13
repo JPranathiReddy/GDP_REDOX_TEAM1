@@ -20,10 +20,10 @@ func _ready():
 func _process(delta):
 	# Apply the movement velocity
 	if GlobalVars.levelSelected==1:
-		velocity = direction1 * GlobalVars.speed
+		velocity = direction1 * GlobalVars.speed*0.8
 		move_and_slide()
 	elif GlobalVars.levelSelected==2:
-		velocity = direction1* GlobalVars.speed*1.5
+		velocity = direction1* GlobalVars.speed*1.2
 		move_and_slide()
 	elif GlobalVars.levelSelected==3:
 		velocity = direction1* GlobalVars.speed*0.5

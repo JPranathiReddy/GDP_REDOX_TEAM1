@@ -20,9 +20,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if GlobalVars.levelSelected==1:
-		velocity = direction1 * GlobalVars.speed
+		velocity = direction1 * GlobalVars.speed*0.8
 	elif GlobalVars.levelSelected==2:
-		velocity = direction1 * GlobalVars.speed*1.5
+		velocity = direction1 * GlobalVars.speed*1.2
 	elif GlobalVars.levelSelected==3:
 		velocity = direction1 * GlobalVars.speed*2
 

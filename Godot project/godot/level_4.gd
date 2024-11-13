@@ -1,19 +1,19 @@
 extends Node2D
 
 @onready var bullet_scene = get_node("/root/Lvl1/Player/Bullet")  # Get a reference to the "bullet" scene
-@onready var answer_spawn_scene = get_node("/root/Lvl1/AnswerSpawn")  # Get a reference to the "answer_spawn" scene
+@onready var answer_spawn_scene = get_node("/root/Lvl1/AnswerSpawn_level4")  # Get a reference to the "answer_spawn" scene
 var speed := 100.0  # Declare and initialize the speed variable
 
 var paused=false
 @onready var pause_menu=$Pause_menu
-@onready var button = $AnswerSpawn/StartButton
+
 # Define the movement area
 var movement_area := Rect2(Vector2(100, 200), Vector2(1000, 400))
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Player.player_hit_answer.connect($AnswerSpawn._on_player_hit_answer)
-	$KillPlane.player_missed_answer.connect($AnswerSpawn._on_player_hit_answer)
-	$AnswerSpawn/StartButton.connect("pressed", Callable(self, "_on_start_button_pressed"))
+	$Player.player_hit_answer.connect($AnswerSpawn_level4._on_player_hit_answer)
+	$KillPlane.player_missed_answer.connect($AnswerSpawn_level4._on_player_hit_answer)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var player = $Player
@@ -43,11 +43,3 @@ func pauseMenu():
 		Engine.time_scale=0
 	paused = !paused
 	
-func _on_button_pressed():
-	$Window.show()
-	
-func _on_window_close_requested():
-	$Window.hide() # Replace with function body.
-	
-func _on_start_button_pressed():
-	$Button.show()

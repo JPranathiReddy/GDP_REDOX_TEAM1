@@ -92,24 +92,17 @@ func updateLvl1QuestionsAnswers():
 	get_tree().call_group("incorrect", "queue_free")
 	if count == len(questionSet) or count >= 10:
 		if GlobalVars.levelSelected == 1:
-			if GlobalVars.score>GlobalVars.level1score || GlobalVars.isLevel1Completed == 0:
+			if GlobalVars.score>GlobalVars.level1score:
 				GlobalVars.level1score = GlobalVars.score
-			# Send a request to update the score in the database
-				update_score_in_db("level1score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
+			update_score_in_db("level1score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
 		if GlobalVars.levelSelected == 2:
-			if GlobalVars.score>GlobalVars.level2score || GlobalVars.isLevel2Completed == 0:
-				GlobalVars.level1score = GlobalVars.score
-				update_score_in_db("level2score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
+			if GlobalVars.score>GlobalVars.level2score:
+				GlobalVars.level2score = GlobalVars.score
+			update_score_in_db("level2score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
 		if GlobalVars.levelSelected == 3:
-			if GlobalVars.score>GlobalVars.level3score || GlobalVars.isLevel3Completed == 0:
-				GlobalVars.level1score = GlobalVars.score
-				update_score_in_db("level3score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
-		await get_tree().create_timer(2.0).timeout
-		if GlobalVars.levelSelected == 2:
-			get_tree().change_scene_to_file("res://game_win2.tscn")  # Load game_win2.tscn if Level 2 is completed
-		else:
-			get_tree().change_scene_to_file("res://game_win.tscn")  # Load default win scene for other levels
-		return
+			if GlobalVars.score>GlobalVars.level3score:
+				GlobalVars.level3score = GlobalVars.score
+			update_score_in_db("level3score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
 		return;
 	# Fetch the current question and answers
 	var current_question = questionSet[count] 
@@ -140,15 +133,15 @@ func updateLvl1QuestionsAnswers():
 	incorrectAnswer1.get_node("Label").text = current_question["incorrectOption1"]
 	incorrectAnswer2.get_node("Label").text = current_question["incorrectOption2"]
 	incorrectAnswer3.get_node("Label").text = current_question["incorrectOption3"]
-	correctAnswer.get_node("Label").self_modulate = Color(1, 1, 0)  # Red color
-	incorrectAnswer1.get_node("Label").self_modulate = Color(1, 1, 0)  # Green color
-	incorrectAnswer2.get_node("Label").self_modulate = Color(1, 1, 0)  # Blue color
-	incorrectAnswer3.get_node("Label").self_modulate = Color(1, 1, 0)  # Yellow color
+	#correctAnswer.get_node("Label").self_modulate = Color(1, 1, 0)  # Red color
+	#incorrectAnswer1.get_node("Label").self_modulate = Color(1, 1, 0)  # Green color
+	#incorrectAnswer2.get_node("Label").self_modulate = Color(1, 1, 0)  # Blue color
+	#incorrectAnswer3.get_node("Label").self_modulate = Color(1, 1, 0)  # Yellow color
 	if GlobalVars.levelSelected == 3:
-		set_font_size(correctAnswer.get_node("Label"),30)
-		set_font_size(incorrectAnswer1.get_node("Label"),30)
-		set_font_size(incorrectAnswer2.get_node("Label"),30)
-		set_font_size(incorrectAnswer3.get_node("Label"),30)
+		set_font_size(correctAnswer.get_node("Label"),34)
+		set_font_size(incorrectAnswer1.get_node("Label"),34)
+		set_font_size(incorrectAnswer2.get_node("Label"),34)
+		set_font_size(incorrectAnswer3.get_node("Label"),34)
 	var screen_width =1200 
 	var base_y = 150 # The vertical position where the answers will be aligned
 	if GlobalVars.levelSelected == 1:

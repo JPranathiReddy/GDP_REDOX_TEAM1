@@ -23,15 +23,15 @@ func _process(delta):
 	elif GlobalVars.levelSelected==2:
 		velocity = direction1* GlobalVars.speed*1.5
 	elif GlobalVars.levelSelected==3:
-		velocity = direction1*GlobalVars.speed*2
-	elif GlobalVars.levelSelected==4:
-		velocity = direction1* GlobalVars.speed
-		if position.y > 200:
-			time_passed += delta
-			var new_x = position.x + sin(time_passed * x_speed) * x_amplitude
-			var new_y = position.y + cos(time_passed * y_speed) * y_amplitude
-			new_x = clamp(new_x, 0, screen_size.x)
-			new_y = clamp(new_y, 0,screen_size.y )
-			position= Vector2(new_x,max_y)
+		velocity = direction1*GlobalVars.speed*0.5
+	#elif GlobalVars.levelSelected==4:
+		#velocity = direction1* GlobalVars.speed*0.1
+		#if position.y > 200:
+			#time_passed += delta
+			#var new_x = position.x + sin(time_passed * x_speed) * x_amplitude
+			#var new_y = position.y + cos(time_passed * y_speed) * y_amplitude
+			#new_x = clamp(new_x, 0, screen_size.x)
+			#new_y = clamp(new_y, 0,screen_size.y )
+			#position= Vector2(new_x,max_y)
 	# Move the character based on the calculated velocity
 	move_and_slide()

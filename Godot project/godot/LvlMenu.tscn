@@ -228,6 +228,7 @@ theme_override_fonts/font = ExtResource("3_onvdp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ce3qu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w477s")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jshbr")
+disabled = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/Button2"]
 layout_mode = 1
@@ -269,6 +270,7 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_fcq4n")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cupyi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8h2ua")
+disabled = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/Button3"]
 layout_mode = 1
@@ -309,6 +311,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_fcq4n")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cupyi")
+disabled = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/Button4"]
 layout_mode = 1

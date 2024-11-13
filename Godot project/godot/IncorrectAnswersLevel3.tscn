@@ -4,21 +4,21 @@
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_shm00"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbv0j"]
-size = Vector2(80, 34)
+size = Vector2(83, 34)
 
 [node name="InorrectAnswersLevel3" type="CharacterBody2D" groups=["incorrect"]]
 script = ExtResource("1_878qe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(115, 17)
+position = Vector2(125.5, 17)
 shape = SubResource("RectangleShape2D_hbv0j")
 
 [node name="Label" type="RichTextLabel" parent="."]
 offset_left = 76.0
 offset_top = -4.0
-offset_right = 189.0
+offset_right = 191.0
 offset_bottom = 46.0
 size_flags_horizontal = 4
 theme_override_fonts/normal_font = ExtResource("2_shm00")
-theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true

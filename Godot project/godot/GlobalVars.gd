@@ -14,6 +14,7 @@ var level3score = 0
 var answered = 0  # Variable to store the progress as a percentage (0 to 100)
 signal healthChanged
 var userEmail = ""
+var even = 0 
 @export var maxHealth: int = 3 
 @onready var currentHealth: int = maxHealth 
 # Called when the node enters the scene tree for the first time.

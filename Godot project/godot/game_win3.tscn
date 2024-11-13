@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=3 uid="uid://xawpaobspbel"]
+
+[ext_resource type="Texture2D" uid="uid://bf71u8pfy4nmg" path="res://WinScreen3.jpeg" id="1_5mgcw"]
+[ext_resource type="Script" path="res://game_win3.gd" id="1_lsunh"]
+[ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_ogv7w"]
+[ext_resource type="AudioStream" uid="uid://kurc7l2kp1lh" path="res://gamewin3.mp3" id="4_dsinb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2kvt"]
+bg_color = Color(0.449626, 0.544402, 0.319247, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.921569, 0.572549, 0.309804, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crjo2"]
+bg_color = Color(0.972549, 0.67451, 0.223529, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.605698, 0.903056, 0.217578, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgvai"]
+bg_color = Color(0.942053, 0.624816, 0.651123, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.988235, 0.847059, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_lsunh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577.5, 327)
+scale = Vector2(1.52214, 1.30859)
+texture = ExtResource("1_5mgcw")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 77.0
+offset_top = -6.0
+offset_right = 1082.0
+offset_bottom = 164.0
+theme_override_fonts/font = ExtResource("2_ogv7w")
+theme_override_font_sizes/font_size = 49
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ScoreLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 149.0
+offset_top = 53.0
+offset_right = 1037.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("2_ogv7w")
+theme_override_font_sizes/font_size = 30
+text = "You are well on your way to becomming a redox master!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 510.0
+offset_top = 576.0
+offset_right = 638.0
+offset_bottom = 624.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0823529, 0.933333, 0.0745098, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_ogv7w")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_a2kvt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_crjo2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vgvai")
+text = "Menu"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_dsinb")
+autoplay = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 378.0
+offset_top = 501.0
+offset_right = 777.0
+offset_bottom = 578.0
+theme_override_fonts/font = ExtResource("2_ogv7w")
+theme_override_font_sizes/font_size = 51
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

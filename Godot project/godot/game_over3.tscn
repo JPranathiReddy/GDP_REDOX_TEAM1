@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqui66h3ssdc6"]
+[gd_scene load_steps=19 format=3 uid="uid://dqui66h3ssdc6"]
 
 [ext_resource type="Script" path="res://game_over3.gd" id="1_nyhni"]
 [ext_resource type="Texture2D" uid="uid://lj1vfletu24x" path="res://gameover3.jpg" id="1_ssujt"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_n6std"]
 [ext_resource type="AudioStream" uid="uid://bi8pe1opx4q3b" path="res://Rain.wav" id="3_alvf4"]
+[ext_resource type="AudioStream" uid="uid://chf0jadlcb0h" path="res://Thunders.wav" id="5_dfhh3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tfr8"]
 bg_color = Color(0.939484, 0.988183, 0.911447, 1)
@@ -44,6 +45,54 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hkwhr"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_xni77"]
+max_value = 0.3
+_data = [Vector2(0.00574712, 0), 0.0, 0.0, 0, 0, Vector2(0.143678, 0.154945), 0.0, 0.0, 0, 0, Vector2(0.5, 0.3), 0.0, 0.0, 0, 0, Vector2(0.844828, 0.141758), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_an78r"]
+curve = SubResource("Curve_xni77")
+
+[sub_resource type="Gradient" id="Gradient_dqi3u"]
+colors = PackedColorArray(0.972549, 0.972549, 0.972549, 0.0784314, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3ux72"]
+gradient = SubResource("Gradient_dqi3u")
+
+[sub_resource type="Curve" id="Curve_68ue5"]
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_xab1r"]
+max_value = 30.0
+_data = [Vector2(0.00574712, 13.8462), 0.0, 0.0, 0, 0, Vector2(0.241379, 30), 0.0, 0.0, 0, 0, Vector2(1, 30), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_yb5bw"]
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_2xvo6"]
+curve_x = SubResource("Curve_68ue5")
+curve_y = SubResource("Curve_xab1r")
+curve_z = SubResource("Curve_yb5bw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2buya"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -200, 0)
+emission_shape = 3
+emission_box_extents = Vector3(600, 1, 1)
+gravity = Vector3(0, 3000, 0)
+scale_min = 0.8
+scale_over_velocity_curve = SubResource("CurveXYZTexture_2xvo6")
+color_initial_ramp = SubResource("GradientTexture1D_3ux72")
+alpha_curve = SubResource("CurveTexture_an78r")
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_nyhni")
@@ -109,5 +158,16 @@ horizontal_alignment = 1
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_alvf4")
 autoplay = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_dfhh3")
+autoplay = true
+
+[node name="Rain" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_hkwhr")
+position = Vector2(558, 193)
+amount = 1000
+process_material = SubResource("ParticleProcessMaterial_2buya")
+visibility_rect = Rect2(-300, -100, 700, 200)
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3714l5hkgphh"]
+[gd_scene load_steps=17 format=3 uid="uid://b3714l5hkgphh"]
 
 [ext_resource type="Script" path="res://Register.gd" id="1_8kniy"]
 [ext_resource type="AudioStream" uid="uid://w85gdxq5ey5x" path="res://audio/airplane_ambience-6830.mp3" id="2_1ax5c"]
 [ext_resource type="Texture2D" uid="uid://bgp2hprqdogrw" path="res://astronaut-4106766_1280.jpg" id="2_cnc6b"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="3_b3hoe"]
 [ext_resource type="Texture2D" uid="uid://c7s5pnetutemm" path="res://back button.png" id="5_7fa50"]
+[ext_resource type="Texture2D" uid="uid://cy4egnx51sh2n" path="res://show.png" id="6_7fu4e"]
+[ext_resource type="Texture2D" uid="uid://cefooh0yhn2ae" path="res://hide.png" id="7_jgqav"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joax2"]
 bg_color = Color(0.366595, 0.366595, 0.366594, 1)
@@ -184,6 +186,7 @@ theme_override_fonts/font = ExtResource("3_b3hoe")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_50dwq")
 placeholder_text = "Password"
+virtual_keyboard_type = 1
 secret = true
 secret_character = "*"
 
@@ -282,6 +285,40 @@ text = "BACK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="showconfirmpassword" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.764
+anchor_top = 0.417
+anchor_right = 0.764
+anchor_bottom = 0.417
+offset_left = -17.1281
+offset_top = -17.216
+offset_right = 16.8719
+offset_bottom = 17.784
+texture_normal = ExtResource("6_7fu4e")
+texture_pressed = ExtResource("7_jgqav")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="showpassword" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.763
+anchor_top = 0.353
+anchor_right = 0.763
+anchor_bottom = 0.353
+offset_left = -16.976
+offset_top = -17.744
+offset_right = 17.024
+offset_bottom = 17.256
+texture_normal = ExtResource("6_7fu4e")
+texture_pressed = ExtResource("7_jgqav")
+ignore_texture_size = true
+stretch_mode = 4
+
 [connection signal="item_selected" from="VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Button" to="." method="_on_signup_button_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="showconfirmpassword" to="." method="_on_showconfirmpassword_pressed"]
+[connection signal="pressed" from="showpassword" to="." method="_on_showpassword_pressed"]

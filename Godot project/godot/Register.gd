@@ -8,6 +8,7 @@ var register_url = "https://redoxui.onrender.com/registerGameUser"
 @onready var passcode_field = $VBoxContainer/secpasscode
 @onready var label = $VBoxContainer/Error   # Label to display messages or selected text
 var is_password_visible = false
+var is_confirm_password_visible = false
 
 func _ready():
 	$Button.connect("pressed", Callable(self, "_on_signup_button_pressed"))
@@ -16,18 +17,21 @@ func _ready():
 
 var id_token = ""
 var selected_section = ""  # Holds the selected option from the OptionButton
-
+var FirstName  
+var LastName 
+var email 
+var password 
+var confirm_password 
 func _on_signup_button_pressed():
 	label.text = "Creating Your room. Kindly wait for sometime!"
 	$Button.disabled = true
 	$TextureButton.disabled = true
 	Audio.button_hit()
-	
-	var FirstName = $VBoxContainer/SID.text
-	var LastName = $VBoxContainer/SID2.text
-	var email = $VBoxContainer/Email.text
-	var password = $VBoxContainer/Password.text
-	var confirm_password = $VBoxContainer/ConfirmPassword.text
+	FirstName = $VBoxContainer/SID.text
+	LastName = $VBoxContainer/SID2.text
+	email = $VBoxContainer/Email.text
+	password = $VBoxContainer/Password.text
+	confirm_password = $VBoxContainer/ConfirmPassword.text
 	if FirstName == "" or LastName == "" or email == "" or password == "" or confirm_password == "" or selected_section == "" or selected_section == "select your section":
 		label.text = "All fields are required!"
 		$Button.disabled = false  # Re-enable button for retry
@@ -36,22 +40,13 @@ func _on_signup_button_pressed():
 	if password != confirm_password:
 		label.text = "Passwords do not match!"
 		return
-	
-	var signup_data = {
-		"email": email,
-		"password": password,
-		"returnSecureToken": true
-	}
-	
-	var json = JSON.new()
-	var body = json.stringify(signup_data)
-	var http = HTTPRequest.new()
-	add_child(http)
-	http.connect("request_completed", Callable(self, "_on_auth_request_completed"))
-	var error = http.request(sign_up_url, ["Content-Type: application/json"], HTTPClient.METHOD_POST, body)
-
-	if error != OK:
-		print("HTTP Request error: ", error)
+	var httpSections = HTTPRequest.new()
+	add_child(httpSections)
+	httpSections.connect("request_completed",Callable(self, "_on_sectionFetched"))
+	var url = "https://redoxui.onrender.com/sections/"
+	var err = httpSections.request(url)
+	if err != OK:
+		print("Error while requesting data: ", err)
 
 func _on_auth_request_completed(result, response_code, headers, body):
 	if response_code == 200:
@@ -128,6 +123,8 @@ func _on_texture_button_pressed():
 	Audio.button_hit()
 	get_tree().change_scene_to_file("res://Auth.tscn")
 
+
+
 func _on_option_button_item_selected(index):
 	selected_section = option_button.get_item_text(index)  # Store the selected option text
 	print("Selected section: ", selected_section)
@@ -136,3 +133,57 @@ func _on_option_button_item_selected(index):
 		passcode_field.visible = true  # Show the passcode field
 	else:
 		passcode_field.visible = false  # Hide the passcode field
+		
+func _on_sectionFetched(result, response_code, headers, body):
+	var json_parser = JSON.new()
+	var body_string = body.get_string_from_utf8()
+	if response_code == 200:
+		var codes = json_parser.parse_string(body_string)
+		if typeof(codes) == TYPE_ARRAY and codes.size() > 0:
+			var code = codes[0]
+			if((selected_section == 'section 1' and $VBoxContainer/secpasscode.text == code["section1"]) or
+				(selected_section == 'section 2' and $VBoxContainer/secpasscode.text == code["section2"]) or
+				(selected_section == 'section 3' and $VBoxContainer/secpasscode.text == code["section3"]) or
+				(selected_section == 'section 4' and $VBoxContainer/secpasscode.text == code["section4"]) or (selected_section == 'others')):
+					var signup_data = {
+					"email": email,
+					"password": password,
+					"returnSecureToken": true
+					}
+					var json = JSON.new()
+					var bodyRequest = json.stringify(signup_data)
+					var http = HTTPRequest.new()
+					add_child(http)
+					http.connect("request_completed", Callable(self, "_on_auth_request_completed"))
+					var error = http.request(sign_up_url, ["Content-Type: application/json"], HTTPClient.METHOD_POST, bodyRequest)
+					if error != OK:
+						print("HTTP Request error: ", error)
+			else:
+				$Button.disabled = false
+				$TextureButton.disabled = false
+				label.text = "Invalid Code. Select others if you dont have any code"
+			
+				
+
+
+func _on_showpassword_pressed():
+	is_password_visible = !is_password_visible
+	$VBoxContainer/Password.secret = !is_password_visible  # Toggle the `secret` property
+
+	# Change the TextureButton's texture based on password visibility
+	if is_password_visible:
+		$showpassword.texture_normal = preload("res://hide.png")
+	else:
+		$showpassword.texture_normal = preload("res://show.png")
+		
+
+
+func _on_showconfirmpassword_pressed():
+	is_confirm_password_visible = !is_confirm_password_visible
+	$VBoxContainer/ConfirmPassword.secret = !is_confirm_password_visible  # Toggle the `secret` property
+
+	# Change the TextureButton's texture based on password visibility
+	if is_confirm_password_visible:
+		$showconfirmpassword.texture_normal = preload("res://hide.png")
+	else:
+		$showconfirmpassword.texture_normal = preload("res://show.png")

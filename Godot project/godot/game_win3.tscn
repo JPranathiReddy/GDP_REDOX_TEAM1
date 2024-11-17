@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://xawpaobspbel"]
+[gd_scene load_steps=10 format=3 uid="uid://xawpaobspbel"]
 
 [ext_resource type="Texture2D" uid="uid://bf71u8pfy4nmg" path="res://WinScreen3.jpeg" id="1_5mgcw"]
 [ext_resource type="Script" path="res://game_win3.gd" id="1_lsunh"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_ogv7w"]
 [ext_resource type="AudioStream" uid="uid://kurc7l2kp1lh" path="res://gamewin3.mp3" id="4_dsinb"]
+[ext_resource type="Texture2D" uid="uid://iwfbx3477nhm" path="res://Shooter3.png" id="5_51uu5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2kvt"]
 bg_color = Color(0.449626, 0.544402, 0.319247, 1)
@@ -43,6 +44,10 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
+[sub_resource type="Gradient" id="Gradient_rf7m4"]
+offsets = PackedFloat32Array(0, 0.431138, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.929412, 0.490196, 0.12549, 1, 0.960784, 0.168627, 0.203922, 1)
+
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_lsunh")
 
@@ -75,10 +80,10 @@ horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 texture_filter = 1
-offset_left = 510.0
-offset_top = 576.0
-offset_right = 638.0
-offset_bottom = 624.0
+offset_left = 501.0
+offset_top = 590.0
+offset_right = 629.0
+offset_bottom = 638.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.0823529, 0.933333, 0.0745098, 1)
 theme_override_constants/outline_size = 0
@@ -94,11 +99,48 @@ stream = ExtResource("4_dsinb")
 autoplay = true
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 378.0
-offset_top = 501.0
-offset_right = 777.0
-offset_bottom = 578.0
+offset_left = 452.0
+offset_top = 539.0
+offset_right = 682.0
+offset_bottom = 584.0
+theme_override_colors/font_outline_color = Color(0.960784, 0.745098, 0.333333, 1)
 theme_override_fonts/font = ExtResource("2_ogv7w")
-theme_override_font_sizes/font_size = 51
+theme_override_font_sizes/font_size = 30
+
+[node name="Fire" type="CPUParticles2D" parent="."]
+position = Vector2(174, 594)
+amount = 80000
+lifetime = 1.2
+speed_scale = 2.3
+explosiveness = 0.2
+emission_shape = 1
+emission_sphere_radius = 60.0
+gravity = Vector2(0, -1000)
+radial_accel_min = -1100.0
+radial_accel_max = -800.0
+color_ramp = SubResource("Gradient_rf7m4")
+
+[node name="Fire2" type="CPUParticles2D" parent="."]
+position = Vector2(1004, 594)
+amount = 80000
+lifetime = 1.2
+speed_scale = 2.3
+explosiveness = 0.2
+emission_shape = 1
+emission_sphere_radius = 60.0
+gravity = Vector2(0, -1000)
+radial_accel_min = -1100.0
+radial_accel_max = -800.0
+color_ramp = SubResource("Gradient_rf7m4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(174.5, 623)
+scale = Vector2(0.663461, 0.571428)
+texture = ExtResource("5_51uu5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(1004, 623)
+scale = Vector2(0.663461, 0.571428)
+texture = ExtResource("5_51uu5")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

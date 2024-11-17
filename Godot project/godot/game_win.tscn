@@ -104,17 +104,17 @@ theme_override_fonts/font = ExtResource("2_k2qie")
 theme_override_font_sizes/font_size = 35
 
 [node name="White" parent="." instance=ExtResource("4_40bnb")]
-amount = 60
+amount = 100
 color = Color(0.885517, 0.954896, 0.96113, 1)
 
 [node name="Red" parent="." instance=ExtResource("4_40bnb")]
 position = Vector2(578, 475)
-amount = 60
+amount = 100
 color = Color(0.815686, 0.121569, 0.164706, 1)
 
 [node name="Orange" parent="." instance=ExtResource("4_40bnb")]
 position = Vector2(578, 472)
-amount = 60
+amount = 100
 color = Color(0.988235, 0.666667, 0.192157, 1)
 
 [node name="Shooter" type="Sprite2D" parent="."]

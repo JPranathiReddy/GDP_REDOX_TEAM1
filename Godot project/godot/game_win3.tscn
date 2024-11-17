@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://xawpaobspbel"]
 
-[ext_resource type="Texture2D" uid="uid://bf71u8pfy4nmg" path="res://WinScreen3.jpeg" id="1_5mgcw"]
 [ext_resource type="Script" path="res://game_win3.gd" id="1_lsunh"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_ogv7w"]
+[ext_resource type="Texture2D" uid="uid://x5tyaomwlg2r" path="res://WinScreen3.jpg" id="2_q6kik"]
 [ext_resource type="AudioStream" uid="uid://kurc7l2kp1lh" path="res://gamewin3.mp3" id="4_dsinb"]
 [ext_resource type="Texture2D" uid="uid://iwfbx3477nhm" path="res://Shooter3.png" id="5_51uu5"]
 
@@ -52,9 +52,9 @@ colors = PackedColorArray(0, 0, 0, 1, 0.929412, 0.490196, 0.12549, 1, 0.960784, 
 script = ExtResource("1_lsunh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(577.5, 327)
-scale = Vector2(1.52214, 1.30859)
-texture = ExtResource("1_5mgcw")
+position = Vector2(574, 324.5)
+scale = Vector2(0.788526, 0.675)
+texture = ExtResource("2_q6kik")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1

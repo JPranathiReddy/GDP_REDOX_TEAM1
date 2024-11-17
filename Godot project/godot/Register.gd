@@ -4,8 +4,10 @@ var api_key = "AIzaSyBc71qt8bE246FHgxRR3hYc0VS0U9wb8EA"
 var sign_up_url = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + api_key
 var register_url = "https://redoxui.onrender.com/registerGameUser"
 
-@onready var option_button = $VBoxContainer/HBoxContainer/OptionButton  # Path to your OptionButton
+@onready var option_button = $VBoxContainer/HBoxContainer/OptionButton 
+@onready var passcode_field = $VBoxContainer/secpasscode
 @onready var label = $VBoxContainer/Error   # Label to display messages or selected text
+var is_password_visible = false
 
 func _ready():
 	$Button.connect("pressed", Callable(self, "_on_signup_button_pressed"))
@@ -26,7 +28,11 @@ func _on_signup_button_pressed():
 	var email = $VBoxContainer/Email.text
 	var password = $VBoxContainer/Password.text
 	var confirm_password = $VBoxContainer/ConfirmPassword.text
-
+	if FirstName == "" or LastName == "" or email == "" or password == "" or confirm_password == "" or selected_section == "" or selected_section == "select your section":
+		label.text = "All fields are required!"
+		$Button.disabled = false  # Re-enable button for retry
+		$TextureButton.disabled = false  # Re-enable button for retry
+		return
 	if password != confirm_password:
 		label.text = "Passwords do not match!"
 		return
@@ -125,3 +131,8 @@ func _on_texture_button_pressed():
 func _on_option_button_item_selected(index):
 	selected_section = option_button.get_item_text(index)  # Store the selected option text
 	print("Selected section: ", selected_section)
+	var sections_requiring_passcode = ["section 1", "section 2", "section 3", "section 4"]
+	if selected_section in sections_requiring_passcode:
+		passcode_field.visible = true  # Show the passcode field
+	else:
+		passcode_field.visible = false  # Hide the passcode field

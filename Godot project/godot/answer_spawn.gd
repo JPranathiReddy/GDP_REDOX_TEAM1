@@ -158,16 +158,14 @@ func updateLvl1QuestionsAnswers():
 		base_y = 150
 	var num_answers = 4  # Total number of answers to display
 	var answer_width = 170  # Estimated width of each answer node
-	var total_width = num_answers * answer_width  # Total width all answers will occupy
-	var start_x = (screen_width - total_width) / 2 # Start position to center the answers
-
+	var gap_between_answers = 20
+	var offset_x = 60
 	var positions = [
-		Vector2((screen_width - (4 * answer_width)) / 2, base_y),  # Position 1
-		Vector2((screen_width - (4 * answer_width)) / 2 + answer_width * 1-10, base_y),  # Position 2
-		Vector2((screen_width - (4 * answer_width)) / 2 + answer_width * 2-10, base_y),  # Position 3
-		Vector2((screen_width - (4 * answer_width)) / 2 + answer_width * 3-10, base_y)   # Position 4
+	Vector2((screen_width - (4 * answer_width)) / 2 - offset_x, base_y),  # Position 1
+	Vector2((screen_width - (4 * answer_width)) / 2 + answer_width * 1 + gap_between_answers - offset_x, base_y),  # Position 2
+	Vector2((screen_width - (4 * answer_width)) / 2 + answer_width * 2 + gap_between_answers * 2 - offset_x, base_y),  # Position 3
+	Vector2((screen_width - (4 * answer_width)) / 2 + answer_width * 3 + gap_between_answers * 3 - offset_x, base_y)   # Position 4
 	]
-
 	# Shuffle the positions to randomize the answer placements
 	positions.shuffle()
 	# Assign positions randomly to the answers

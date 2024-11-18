@@ -48,11 +48,11 @@ func unlock_levels_based_on_score():
 		$TextureRect/Button3.disabled = true
 
 	if GlobalVars.level3score >= 70:
-		#$TextureRect/Button4.disabled = false
+		$TextureRect/Button4.disabled = false
 		GlobalVars.isLevel3Completed = 1
-		#$TextureRect/Button4.add_theme_color_override("font_color", Color(0, 1, 0))  # Green for unlocked
-		#var texture_button4 = $TextureRect/Button4/HBoxContainer/TextureRect
-		#texture_button4.texture = load("res://unlocked.png")
+		$TextureRect/Button4.add_theme_color_override("font_color", Color(0, 1, 0))  # Green for unlocked
+		var texture_button4 = $TextureRect/Button4/HBoxContainer/TextureRect
+		texture_button4.texture = load("res://unlocked.png")
 	else:
 		$TextureRect/Button4.disabled = true
 

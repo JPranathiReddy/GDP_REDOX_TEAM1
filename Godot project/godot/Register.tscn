@@ -227,7 +227,7 @@ popup/item_3/text = "section 3"
 popup/item_3/id = 3
 popup/item_4/text = "section 4"
 popup/item_4/id = 4
-popup/item_5/text = "others"
+popup/item_5/text = "other"
 popup/item_5/id = 5
 
 [node name="secpasscode" type="LineEdit" parent="VBoxContainer"]

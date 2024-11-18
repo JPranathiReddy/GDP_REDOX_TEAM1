@@ -145,7 +145,7 @@ func _on_sectionFetched(result, response_code, headers, body):
 			if((selected_section == 'section 1' and $VBoxContainer/secpasscode.text == code["section1"]) or
 				(selected_section == 'section 2' and $VBoxContainer/secpasscode.text == code["section2"]) or
 				(selected_section == 'section 3' and $VBoxContainer/secpasscode.text == code["section3"]) or
-				(selected_section == 'section 4' and $VBoxContainer/secpasscode.text == code["section4"]) or (selected_section == 'others')):
+				(selected_section == 'section 4' and $VBoxContainer/secpasscode.text == code["section4"]) or (selected_section == 'other')):
 					var signup_data = {
 					"email": email,
 					"password": password,
@@ -162,7 +162,7 @@ func _on_sectionFetched(result, response_code, headers, body):
 			else:
 				$Button.disabled = false
 				$TextureButton.disabled = false
-				label.text = "Invalid Code. Select others if you dont have any code"
+				label.text = "Invalid Code. Select other if you dont have any code"
 			
 				
 

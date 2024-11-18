@@ -1,7 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://xdqy2hp8gwqu"]
+[gd_scene load_steps=4 format=3 uid="uid://xdqy2hp8gwqu"]
 
 [ext_resource type="Script" path="res://answer_spawn_level_4.gd" id="1_2pf6c"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="1_rfnyo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjldk"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.810621, 0.827146, 0.511839, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="AnswerSpawn_level4" type="Node2D"]
 script = ExtResource("1_2pf6c")
@@ -21,6 +34,7 @@ offset_right = 682.0
 offset_bottom = 348.0
 theme_override_fonts/font = ExtResource("1_rfnyo")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_qjldk")
 text = "Start Level"
 metadata/_edit_use_anchors_ = true
 

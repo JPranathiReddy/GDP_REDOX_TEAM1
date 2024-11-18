@@ -1,10 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://fv5odcub5mqd"]
+[gd_scene load_steps=5 format=3 uid="uid://fv5odcub5mqd"]
 
 [ext_resource type="Script" path="res://correct_answers.gd" id="1_7jqqi"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_2a8uo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lyo2h"]
 size = Vector2(172, 26)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ocs2q"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.88102, 0.793429, 0.568726, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="CorrectAnswers" type="CharacterBody2D" groups=["correct"]]
 script = ExtResource("1_7jqqi")
@@ -14,8 +27,9 @@ position = Vector2(123, 19)
 shape = SubResource("RectangleShape2D_lyo2h")
 
 [node name="Label" type="RichTextLabel" parent="."]
-offset_left = 34.0
-offset_right = 211.0
-offset_bottom = 40.0
+offset_left = 32.0
+offset_right = 214.0
+offset_bottom = 49.0
 theme_override_fonts/normal_font = ExtResource("2_2a8uo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ocs2q")
 bbcode_enabled = true

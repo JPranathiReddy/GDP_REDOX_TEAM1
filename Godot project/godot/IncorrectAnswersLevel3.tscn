@@ -1,24 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://qx833ookd4ji"]
+[gd_scene load_steps=5 format=3 uid="uid://qx833ookd4ji"]
 
 [ext_resource type="Script" path="res://IncorrectAnswersLevel3.gd" id="1_878qe"]
 [ext_resource type="FontFile" uid="uid://dgba8l3ee6gl6" path="res://Xolonium-Regular.ttf" id="2_shm00"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbv0j"]
-size = Vector2(83, 34)
+size = Vector2(102, 34)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8jc0"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.760784, 0.847059, 0.501961, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="InorrectAnswersLevel3" type="CharacterBody2D" groups=["incorrect"]]
 script = ExtResource("1_878qe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(125.5, 17)
+position = Vector2(135, 17)
 shape = SubResource("RectangleShape2D_hbv0j")
 
 [node name="Label" type="RichTextLabel" parent="."]
 offset_left = 76.0
 offset_top = -4.0
-offset_right = 191.0
-offset_bottom = 46.0
+offset_right = 193.0
+offset_bottom = 41.0
 size_flags_horizontal = 4
 theme_override_fonts/normal_font = ExtResource("2_shm00")
 theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_p8jc0")
 bbcode_enabled = true

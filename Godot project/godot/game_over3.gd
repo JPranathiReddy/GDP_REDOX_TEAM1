@@ -12,5 +12,6 @@ func _process(delta):
 
 
 func _on_main_menu_button_pressed():
+	Audio.button_hit()
 	GlobalVars._reset_game()
 	get_tree().change_scene_to_file("res://LvlMenu.tscn")

@@ -126,6 +126,7 @@ func _on_texture_button_pressed():
 
 
 func _on_option_button_item_selected(index):
+	Audio.button_hit()
 	selected_section = option_button.get_item_text(index)  # Store the selected option text
 	print("Selected section: ", selected_section)
 	var sections_requiring_passcode = ["section 1", "section 2", "section 3", "section 4"]
@@ -167,6 +168,7 @@ func _on_sectionFetched(result, response_code, headers, body):
 
 
 func _on_showpassword_pressed():
+	Audio.button_hit()
 	is_password_visible = !is_password_visible
 	$VBoxContainer/Password.secret = !is_password_visible  # Toggle the `secret` property
 
@@ -179,6 +181,7 @@ func _on_showpassword_pressed():
 
 
 func _on_showconfirmpassword_pressed():
+	Audio.button_hit()
 	is_confirm_password_visible = !is_confirm_password_visible
 	$VBoxContainer/ConfirmPassword.secret = !is_confirm_password_visible  # Toggle the `secret` property
 

@@ -23,6 +23,7 @@ func _process(delta):
 		_on_login_button_pressed()
 
 func _on_showpassword_pressed():
+	Audio.button_hit()
 	is_password_visible = !is_password_visible
 	$VBoxContainer/password.secret = !is_password_visible  # Toggle the `secret` property
 

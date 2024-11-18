@@ -9,10 +9,12 @@ var isPaused = false
 
 # Toggle pause/resume when the pause/resume button is pressed
 func _on_pauseresumebutton_pressed():
+	Audio.button_hit()
 	if isPaused:
 		resume_game()
 	else:
 		pause_game()
+		
 
 # Pauses the game
 func pause_game():

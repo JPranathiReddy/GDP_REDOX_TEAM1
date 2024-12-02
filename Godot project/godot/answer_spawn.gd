@@ -75,17 +75,17 @@ func update_score_in_db(level: String, new_score: int,callback: Callable):
 
 func _on_score_update_complete(result, response_code, headers, body):
 	if GlobalVars.levelSelected == 1:
-		if GlobalVars.score >= 70:
+		if GlobalVars.level1score >= 70:
 			get_tree().change_scene_to_file("res://game_win.tscn")
 		else:
 			get_tree().change_scene_to_file("res://game_over.tscn")
 	elif GlobalVars.levelSelected == 2:
-		if GlobalVars.score >= 70:
+		if GlobalVars.level2score >= 70:
 			get_tree().change_scene_to_file("res://game_win2.tscn")
 		else:
 			get_tree().change_scene_to_file("res://game_over2.tscn")
 	elif GlobalVars.levelSelected == 3:
-		if GlobalVars.score >= 70:
+		if GlobalVars.level3score >= 70:
 			get_tree().change_scene_to_file("res://game_win3.tscn")
 		else:
 			get_tree().change_scene_to_file("res://game_over3.tscn")
@@ -93,7 +93,18 @@ func _on_score_update_complete(result, response_code, headers, body):
 # Function to update and display the current question and answers
 func updateLvl1QuestionsAnswers():
 	if GlobalVars.currentHealth<=0:
-		update_score_in_db("level" + str(GlobalVars.levelSelected) + "score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
+		if GlobalVars.levelSelected == 1:
+			if GlobalVars.score>GlobalVars.level1score:
+				GlobalVars.level1score = GlobalVars.score
+			update_score_in_db("level1score", GlobalVars.level1score, Callable(self, "_on_score_update_complete"))
+		if GlobalVars.levelSelected == 2:
+			if GlobalVars.score>GlobalVars.level2score:
+				GlobalVars.level2score = GlobalVars.score
+			update_score_in_db("level2score", GlobalVars.level2score, Callable(self, "_on_score_update_complete"))
+		if GlobalVars.levelSelected == 3:
+			if GlobalVars.score>GlobalVars.level3score:
+				GlobalVars.level3score = GlobalVars.score
+			update_score_in_db("level3score", GlobalVars.level3score, Callable(self, "_on_score_update_complete"))
 		return;
 	get_tree().call_group("correct", "queue_free")
 	get_tree().call_group("incorrect", "queue_free")
@@ -101,15 +112,15 @@ func updateLvl1QuestionsAnswers():
 		if GlobalVars.levelSelected == 1:
 			if GlobalVars.score>GlobalVars.level1score:
 				GlobalVars.level1score = GlobalVars.score
-			update_score_in_db("level1score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
+			update_score_in_db("level1score", GlobalVars.level1score, Callable(self, "_on_score_update_complete"))
 		if GlobalVars.levelSelected == 2:
 			if GlobalVars.score>GlobalVars.level2score:
 				GlobalVars.level2score = GlobalVars.score
-			update_score_in_db("level2score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
+			update_score_in_db("level2score", GlobalVars.level2score, Callable(self, "_on_score_update_complete"))
 		if GlobalVars.levelSelected == 3:
 			if GlobalVars.score>GlobalVars.level3score:
 				GlobalVars.level3score = GlobalVars.score
-			update_score_in_db("level3score", GlobalVars.score, Callable(self, "_on_score_update_complete"))
+			update_score_in_db("level3score", GlobalVars.level3score, Callable(self, "_on_score_update_complete"))
 		return;
 	# Fetch the current question and answers
 	var current_question = questionSet[count] 

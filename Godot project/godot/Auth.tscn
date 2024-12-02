@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bljpxegfimoun"]
+[gd_scene load_steps=14 format=3 uid="uid://bljpxegfimoun"]
 
 [ext_resource type="Texture2D" uid="uid://cdnkimsv1kvjs" path="res://login background.jpg" id="1_7n8s6"]
 [ext_resource type="Script" path="res://Auth.gd" id="2_3bj3s"]
@@ -62,6 +62,12 @@ border_width_bottom = 4
 border_color = Color(0.967557, 0.973412, 0.990412, 1)
 border_blend = true
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxdlh"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0gkd"]
+draw_center = false
+
 [node name="TextureRect" type="TextureRect"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,9 +89,9 @@ anchor_top = 0.62
 anchor_right = 0.504
 anchor_bottom = 0.62
 offset_left = -134.608
-offset_top = -24.76
+offset_top = -6.76001
 offset_right = 132.392
-offset_bottom = 25.24
+offset_bottom = 43.24
 theme_override_fonts/font = ExtResource("3_lpgcu")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_s5l7f")
@@ -111,9 +117,9 @@ anchor_top = 0.422
 anchor_right = 0.5
 anchor_bottom = 0.422
 offset_left = -253.0
-offset_top = -55.456
+offset_top = -24.456
 offset_right = 277.0
-offset_bottom = 55.544
+offset_bottom = 86.544
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -145,10 +151,10 @@ anchor_left = 0.715
 anchor_top = 0.457
 anchor_right = 0.715
 anchor_bottom = 0.457
-offset_left = -19.5551
-offset_top = -18.276
-offset_right = 18.4449
-offset_bottom = 17.724
+offset_left = -18.5551
+offset_top = 13.724
+offset_right = 19.4449
+offset_bottom = 49.724
 texture_normal = ExtResource("5_mtguo")
 texture_pressed = ExtResource("6_6rau4")
 ignore_texture_size = true
@@ -165,9 +171,9 @@ anchor_top = 0.685
 anchor_right = 0.56
 anchor_bottom = 0.685
 offset_left = -211.12
-offset_top = 12.12
+offset_top = 30.12
 offset_right = 172.88
-offset_bottom = 64.12
+offset_bottom = 82.12
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("3_lpgcu")
@@ -188,13 +194,31 @@ anchor_top = 0.741
 anchor_right = 0.5
 anchor_bottom = 0.741
 offset_left = -144.0
-offset_top = 23.832
+offset_top = 43.832
 offset_right = 301.0
-offset_bottom = 63.832
+offset_bottom = 83.832
 theme_override_fonts/normal_font = ExtResource("3_lpgcu")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Forgot Password? [u]Click here..[/u]"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.268503
+anchor_top = 0.132548
+anchor_right = 0.76506
+anchor_bottom = 0.226804
+offset_left = -6.0
+offset_top = 53.0
+offset_right = -6.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(1, 0.665778, 0.579893, 1)
+theme_override_fonts/font = ExtResource("3_lpgcu")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_jxdlh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_l0gkd")
+text = "Welcome to Student Login"
 
 [connection signal="pressed" from="Button" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="showpassword" to="." method="_on_showpassword_pressed"]

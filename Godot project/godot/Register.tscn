@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b3714l5hkgphh"]
+[gd_scene load_steps=18 format=3 uid="uid://b3714l5hkgphh"]
 
 [ext_resource type="Script" path="res://Register.gd" id="1_8kniy"]
 [ext_resource type="AudioStream" uid="uid://w85gdxq5ey5x" path="res://audio/airplane_ambience-6830.mp3" id="2_1ax5c"]
@@ -123,6 +123,9 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbk5e"]
+draw_center = false
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -316,6 +319,18 @@ texture_normal = ExtResource("6_7fu4e")
 texture_pressed = ExtResource("7_jgqav")
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 31.0
+offset_right = 705.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0.752941, 0.976471, 0, 1)
+theme_override_fonts/font = ExtResource("3_b3hoe")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_pbk5e")
+text = "Student Register "
 
 [connection signal="item_selected" from="VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Button" to="." method="_on_signup_button_pressed"]
